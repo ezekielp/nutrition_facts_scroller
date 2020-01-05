@@ -27,10 +27,11 @@ Additionally, this project will include:
 - [ ] A sidebar of scrollable text providing some context and highlights about the food featured in a given visualization
 - [ ] A production README
 
-
 ## <a name="wireframes"></a> Wireframes
 
-
+<p>
+    <img src="https://raw.githubusercontent.com/ezekielp/nutrition_facts_scroller/master/nutrition_facts_scroller_wireframe.png">
+</p>
 
 ## <a name="technologies"></a> Architecture and technologies
 
