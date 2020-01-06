@@ -1,0 +1,45 @@
+{
+  "name": "nutrition_facts_scroller",
+  "version": "1.0.0",
+  "description": "### Table of contents 1. [Background and overview](#background) 2. [Functionality & MVP](#functionality) 3. [Wireframes](#wireframes) 4. [Architecture and technologies](#technologies) 5. [Implementation timeline](#timeline) 6. [Bonus features](#bonus)",
+  "main": "index.js",
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "webpack:watch": "webpack --watch --config webpack.dev.js",
+    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezekielp/nutrition_facts_scroller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezekielp/nutrition_facts_scroller/issues"
+  },
+  "homepage": "https://github.com/ezekielp/nutrition_facts_scroller#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "autoprefixer": "^9.7.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.1",
+    "fibers": "^4.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.24.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
+  }
+}
