@@ -1,9 +1,10 @@
 import './styles/index.scss';
 
-let newBox;
+let redBox, blueBox;
 
 window.addEventListener("load", (e) => {
-    newBox = document.querySelector("#new-box");
+    redBox = document.querySelector("#red-box");
+    blueBox = document.querySelector("#blue-box");
 
     createObserver();
 }, false);
@@ -14,17 +15,24 @@ const createObserver = () => {
     let options = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: 0.25
+      threshold: .25
     };
 
     observer = new IntersectionObserver(handleScrollOnto, options);
-    observer.observe(newBox);
+    observer.observe(redBox);
+    observer.observe(blueBox);
 }
 
 const handleScrollOnto = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.visibility = "visible";
+            // entry.target.style.opacity = "100%";
+            entry.target.style.transform = "translateX(0%)";
+            // entry.target.style.visibility = "visible";
+        } else {
+            // entry.target.style.opacity = "0%";
+            // entry.target.style.visibility = "hidden";
+            entry.target.style.transform = "translateX(150%)";
         }
     })
 }
