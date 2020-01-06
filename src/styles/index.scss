@@ -1,5 +1,12 @@
 #scroll-area {
     width: 600px;
-    height: 600px;
+    height: 1200px;
     background-color: red;
+}
+
+#new-box {
+    width: 600px;
+    height: 1200px;
+    background-color: blue;
+    visibility: hidden;
 }
