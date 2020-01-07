@@ -1,46 +1,43 @@
+body {
+    overflow-y: hidden;
+}
+
 #viewable-area {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 600px;
+    height: 500px;
 }
 
-#text-box {
+#slide-svg-container {
     width: 800px;
-    height: 600px;
+    height: 500px;
     text-align: center;
     line-height: 600px;
     transition: all 1s;
 }
 
-#text-box svg {
+.slide-svg-container svg {
     position: absolute;
 }
 
 .slide-container {
     display: flex;
-    height: 600px;
+    height: 500px;
     width: 800px;
 }
 
 .slide-text-area {
     width: 250px;
-    height: 600px;
+    height: 500px;
+    font-size: 30px;
+    border-top: 1px solid black;
+    /* padding-top: 200px; */
+    box-sizing: border-box;
 }
 
-#red-box {
-    height: 450px;
-    width: 600px;
-    background-color: red;
-    /* opacity: 0%; */
-    /* transform: rotate(0.5turn); */
-    transition: all 1s;
+
+.slide-svg-1-rect {
+    fill: blue;
 }
 
-#blue-box {
-    height: 450px;
-    width: 600px;
-    background-color: blue;
-    /* opacity: 0%; */
-    /* visibility: hidden */
-    transition: all 1s;
-}
+
