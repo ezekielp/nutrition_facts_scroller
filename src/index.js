@@ -83,7 +83,7 @@ const createObserver = () => {
     let options = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: .50
+      threshold: .75
     };
 
     observer = new IntersectionObserver(handleScrollOnto, options);
@@ -118,8 +118,8 @@ const handleScrollOnto = (entries, observer) => {
               .attr("height", function(d) {
                 return yScale(d);
               })
-              .duration(1000)
-              .delay(500);
+              .duration(500)
+            //   .delay(500);
 
             // createVisualization(nutritionData[0]);
             // entry.target.style.opacity = "100%";
@@ -129,7 +129,7 @@ const handleScrollOnto = (entries, observer) => {
             d3.selectAll("rect")
             .transition()
             .attr("y", 500)
-            .duration(1000);
+            .duration(500);
             // entry.target.style.opacity = "0%";
             // entry.target.style.visibility = "hidden";
             // entry.target.style.transform = "translateX(50%)";
