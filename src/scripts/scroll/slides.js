@@ -1,60 +1,28 @@
-export const bananaSlide = (idx, options, slide, data) => {
-  let foodData = data[idx];
-
-  let targetSlide = ".slide-svg-" + idx;
-  let targetSlideRect = targetSlide + "-rect";
+export const bananaSlide = (options, slide) => {
 
   const handleBananaScrollOnto = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        let margin = { top: 40, right: 40, bottom: 65, left: 50 };
-        let w = 700 - margin.left - margin.right;
-        let h = 600 - margin.top - margin.bottom;
-
-        let singleFoodData = Object.values(foodData).slice(2, -1);
-
-        let maxValue = Math.max(
-            0.5,
-            d3.max(singleFoodData, function(d) {
-              return +d / 100;
-            })
-        );
-
-        let yScale = d3
-            .scaleLinear()
-            .domain([0, maxValue])
-            .range([h - margin.top, margin.bottom]);
-
-
-        d3.selectAll(`${targetSlideRect}`)
-          .data(singleFoodData)
-          .transition()
-          .attr("y", function(d) {
-            return yScale(d / 100);
-          })
-        //   .attr("height", function(d) {
-        //       debugger;
-        //     return h - yScale(d / 100) - margin.top;
-        //   })
-          .delay(750)
-          .duration(500);
-
-        d3.selectAll(".slide-svg-1-rect")
-          .transition()
-          .attr("y", h + 200)
-        //   .attr("height", "0px")
-          .duration(500);
+        
+        let bananaRects = document.querySelectorAll(`.slide-svg-0-rect`);
+        bananaRects.forEach(rect => {
+            rect.classList.remove("hidden");
+        });
+        
+        let potatoRects = document.querySelectorAll(`.slide-svg-1-rect`);
+        potatoRects.forEach(rect => {
+            rect.classList.add("hidden");
+        });
 
         d3.select(".slide-svg-0-y-axis")
-          .transition()
-          .style("opacity", "100%")
-          .delay(750)
-          .duration(500);        
+            .transition()
+            .style("opacity", "100%")
+            .duration(500);        
 
         d3.select(".slide-svg-1-y-axis")
-        .transition()
-        .style("opacity", "0%")
-        .duration(500);
+            .transition()
+            .style("opacity", "0%")
+            .duration(500);
       }
     });
   };
@@ -63,59 +31,38 @@ export const bananaSlide = (idx, options, slide, data) => {
   observer.observe(slide);
 };
 
-export const potatoSlide = (idx, options, slide, data) => {
-
-  let foodData = data[idx];
-
-  let targetSlide = ".slide-svg-" + idx;
-  let targetSlideRect = targetSlide + "-rect";
+export const potatoSlide = (options, slide) => {
 
   const handlePotatoScrollOnto = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        let margin = { top: 40, right: 40, bottom: 65, left: 50 };
-        let w = 700 - margin.left - margin.right;
-        let h = 600 - margin.top - margin.bottom;
 
-        let singleFoodData = Object.values(foodData).slice(2, -1);
+        let potatoRects = document.querySelectorAll(`.slide-svg-1-rect`);
+        potatoRects.forEach(rect => {
+            rect.classList.remove('hidden');
+        });
 
-        let maxValue = Math.max(
-          0.5,
-          d3.max(singleFoodData, function(d) {
-            return +d / 100;
-          })
-        );
+        let bananaRects = document.querySelectorAll(`.slide-svg-0-rect`);
+        bananaRects.forEach(rect => {
+            rect.classList.add('hidden');
+        });
 
-        let yScale = d3
-          .scaleLinear()
-          .domain([0, maxValue])
-          .range([h - margin.top, margin.bottom]);
-
-        d3.selectAll(`${targetSlideRect}`)
-          .data(singleFoodData)
-          .transition()
-          .attr("y", function(d) {
-            return yScale(d / 100);
-          })
-        //   .attr("height", function(d) {
-        //     return h - yScale(d / 100) - margin.top;
-        //   })
-          .delay(750)
-          .duration(500);
-
+        let butterRects = document.querySelectorAll(`.slide-svg-2-rect`);
+        butterRects.forEach(rect => {
+            rect.classList.add('hidden');
+        });
+        
         d3.select(".slide-svg-1-y-axis")
           .transition()
           .style("opacity", "100%")
-          .delay(750)
           .duration(500);        
 
-        d3.selectAll(".slide-svg-0-rect")
+        d3.select(".slide-svg-0-y-axis")
           .transition()
-          .attr("y", h + 200)
-        //   .attr("height", "0px")
+          .style("opacity", "0%")
           .duration(500);
 
-        d3.select(".slide-svg-0-y-axis")
+          d3.select(".slide-svg-2-y-axis")
           .transition()
           .style("opacity", "0%")
           .duration(500);
@@ -128,104 +75,174 @@ export const potatoSlide = (idx, options, slide, data) => {
 
 }
 
-export const butterSlide = (idx, options, slide, data) => {
+export const butterSlide = (options, slide) => {
+
+  const handleButterScrollOnto = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          let butterRects = document.querySelectorAll(`.slide-svg-2-rect`);
+          butterRects.forEach(rect => {
+            rect.classList.remove("hidden");
+          });
+
+        let potatoRects = document.querySelectorAll(`.slide-svg-1-rect`);
+        potatoRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        let avocadoRects = document.querySelectorAll(`.slide-svg-3-rect`);
+        avocadoRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
 
 
+        d3.select(".slide-svg-2-y-axis")
+          .transition()
+          .style("opacity", "100%")
+          .duration(500);
+
+        d3.select(".slide-svg-1-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+
+        d3.select(".slide-svg-3-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(handleButterScrollOnto, options);
+  observer.observe(slide);
 
 }
 
-export const avocadoSlide = (idx, options, slide, data) => {
-  let foodData = data[idx];
+export const avocadoSlide = (options, slide) => {
 
-  let targetSlide = ".slide-svg-" + idx;
-  let targetSlideRect = targetSlide + "-rect";
+  const handleAvocadoScrollOnto = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        let avocadoRects = document.querySelectorAll(`.slide-svg-3-rect`);
+        avocadoRects.forEach(rect => {
+        rect.classList.remove("hidden");
+        });
+
+        let butterRects = document.querySelectorAll(`.slide-svg-2-rect`);
+        butterRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        let beefLiverRects = document.querySelectorAll(`.slide-svg-4-rect`);
+        beefLiverRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
 
 
+        d3.select(".slide-svg-3-y-axis")
+          .transition()
+          .style("opacity", "100%")
+          .duration(500);
+
+        d3.select(".slide-svg-2-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+
+        d3.select(".slide-svg-4-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+      }
+    });
+  };
 
   let observer = new IntersectionObserver(handleAvocadoScrollOnto, options);
   observer.observe(slide);
 };    
 
 
-export const beefLiverSlide = (idx, options, slide, data) => {
+export const beefLiverSlide = (options, slide) => {
 
 
 
 }
 
-export const codLiverSlide = (idx, options, slide, data) => {
+export const codLiverSlide = (options, slide) => {
 
 
 
 }
 
-export const eggSlide = (idx, options, slide, data) => {
+export const eggSlide = (options, slide) => {
 
 
 
 }
 
-export const herringSlide = (idx, options, slide, data) => {
+export const herringSlide = (options, slide) => {
 
 
 
 }
 
-export const tunaSlide = (idx, options, slide, data) => {
+export const tunaSlide = (options, slide) => {
 
 
 
 }
 
-export const broccoliSlide = (idx, options, slide, data) => {
+export const broccoliSlide = (options, slide) => {
 
 
 
 }
 
-export const peasSlide = (idx, options, slide, data) => {
+export const peasSlide = (options, slide) => {
 
 
 
 }
 
-export const redPepperSlide = (idx, options, slide, data) => {
+export const redPepperSlide = (options, slide) => {
 
 
 
 }
 
-export const oysterSlide = (idx, options, slide, data) => {
+export const oysterSlide = (options, slide) => {
 
 
 
 }
 
-export const spinachSlide = (idx, options, slide, data) => {
+export const spinachSlide = (options, slide) => {
 
 
 
 }
 
-export const quinoaSlide = (idx, options, slide, data) => {
+export const quinoaSlide = (options, slide) => {
 
 
 
 }
 
-export const chocolateSlide = (idx, options, slide, data) => {
+export const chocolateSlide = (options, slide) => {
 
 
 
 }
 
-export const strawberrySlide = (idx, options, slide, data) => {
+export const strawberrySlide = (options, slide) => {
 
 
 
 }
 
-export const beanSlide = (idx, options, slide, data) => {
+export const beanSlide = (options, slide) => {
 
 
 

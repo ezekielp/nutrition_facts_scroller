@@ -61,4 +61,27 @@ body {
     fill: #A7883A;
 }
 
+.slide-svg-2-rect {
+    fill: #FFE44C;
+}
+
+.slide-svg-3-rect {
+    fill: #568203;
+}
+
+.hidden {
+    display: none;
+}
+
+.chart-rect {
+    animation-duration: 0.5s;
+    animation-name: animateHeight;
+}
+
+@keyframes animateHeight {
+    from {y: 450 }
+    to {y: attr(y)}
+    from {height: 0px }
+    to {height: attr(height)}
+}
 
