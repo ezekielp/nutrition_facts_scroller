@@ -1,6 +1,12 @@
 body {
 }
 
+#main-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
 .background-container {
     /* overflow-y: hidden;
     background-image: url('./bananas.svg');
@@ -17,6 +23,7 @@ body {
     width: 1000px;
     height: 500px;
     background-color: white;
+    margin: auto;
 }
 
 .slide-svg-container {

@@ -24,6 +24,7 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
   console.log(nutritionData);
   
   createVisualization(nutritionData[0], 0);
+  createVisualization(nutritionData[1], 1);
 //   nutritionData.forEach((foodData, idx) => {
 //       createVisualization(foodData, idx);
 //   });
@@ -37,18 +38,24 @@ const createVisualization = (foodData, idx) => {
 
   let data = Object.values(foodData).slice(2, -1);
   let numberOfColumns = 10;
-  let maxValue = .50;
+//   let maxValue = .50;
+  let maxValue = Math.max(.50, d3.max(data, function(d) {
+    return (+d / 100);
+  }));
 //   let maxValue = d3.max(data, function(d) {
 //     return +d;
 //   });
   let x_axisLength = w;
   let y_axisLength = h;
-  let targetSlide = "#slide-svg-" + idx;
+  let targetSVG = "slide-svg-" + idx;
   let targetSlideRect = "slide-svg-" + idx + "-rect";
 
+//   debugger;
   let xScale = d3
     .scaleLinear()
+    // .domain(d3.extent(Object.keys(foodData).slice(2, -1), function(d) { return d }))
     .domain([0, numberOfColumns])
+    // .domain([data[0], data[data.length - 1]])
     .range([0, w]);
 
   let yScale = d3
@@ -62,10 +69,13 @@ const createVisualization = (foodData, idx) => {
 //     .domain([0, maxValue])
 //     .range([0, y_axisLength + 50]);
 
+//   debugger;
+
   let svg = d3
     // .select(`${targetSlide}`)
     .select("#vis")
     .append("svg")
+    // .attr("class", `${targetSVG}`)
     .attr("width", w + margin.left + margin.right)
     .attr("height", h + margin.top + margin.bottom);
 
@@ -78,32 +88,49 @@ const createVisualization = (foodData, idx) => {
     .attr("x", function(d, i) {
       return i * (x_axisLength / numberOfColumns) + margin.left + 10;
     })
-    .attr("y", function(d) {
-    //   return yScale(d);
-      return yScale(d / 100);
-    })
+    .attr("y", h + 200)
+    // .attr("y", function(d) {
+    // //   return yScale(d / 100);
+    // })
     .attr("width", x_axisLength / numberOfColumns - 1)
     .attr("height", function(d) {
+    //  return 0;
       return h - yScale(d / 100) - margin.top;
-    })
+   })
     .attr("fill", "red")
     .transition()
     .duration(500);
 
-    // d3
-    //   .tickValues(
-    //       ['Fiber', 'Iron', 'Magnesium', 'Potassium', 'Zinc', 'Vitamin C', 'Folate', 'Vitamin B-12', 'Vitamin A', 'Vitamin D']
-    //   )
+    let xAxis = d3
+                .axisBottom(xScale)
+                .tickSize(0)
+                .tickFormat(function(d) {
+                    return Object.keys(foodData).slice(2, -1)[d];
+                });
+
+    svg
+        .append("g")
+        .attr("class", `${targetSVG}-x-axis x-axis`)
+        //   .attr("class", `y-axis`)
+        // .attr("transform", "translate(0, " + h + ")")
+        .attr("transform", "translate(" + margin.left + ", " + (h - margin.top) + ")")
+        .transition()
+        .duration(1000)
+        .call(xAxis)
+        // .selectAll("text");
+
+    svg.selectAll(".x-axis text")
+        .attr("transform", function(d) {
+            return "translate(20, 20)rotate(-45)"; 
+        });
 
     let yAxis = d3.axisLeft(yScale).ticks(4, "%");
 
     svg
       .append("g")
-      .attr("class", "y-axis")
-      .attr(
-        "transform",
-        "translate(" + margin.left + ",0)"
-      )
+      .attr("class", `${targetSVG}-y-axis y-axis`)
+    //   .attr("class", `y-axis`)
+      .attr("transform", "translate(" + margin.left + ",0)")
       .transition()
       .duration(1000)
       .call(yAxis);
@@ -135,11 +162,11 @@ const createObservers = (slides) => {
     let options = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: .5
+      threshold: .3
     };
 
     
-    // Slides.avocadoSlide(0, options, slides[0], nutritionData);
-    // Slides.bananaSlide(1, options, slides[1], nutritionData);
+    Slides.bananaSlide(0, options, slides[0], nutritionData);
+    Slides.potatoSlide(1, options, slides[1], nutritionData);
 
 }
