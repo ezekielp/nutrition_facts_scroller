@@ -9,9 +9,10 @@ export const avocadoSlide = (idx, options, slide, data) => {
       if (entry.isIntersecting) {
         let singleFoodData = Object.values(foodData).slice(2, -1);
 
-        let maxValue = d3.max(singleFoodData, function(d) {
-          return +d;
-        });
+        let maxValue = 25;
+        // let maxValue = d3.max(singleFoodData, function(d) {
+        //   return +d;
+        // });
         let y_axisLength = 450;
 
         let yScale = d3
@@ -26,7 +27,8 @@ export const avocadoSlide = (idx, options, slide, data) => {
             return 500 - yScale(d);
           })
           .attr("height", function(d) {
-            return yScale(d);
+              return yScale(d);
+            //   return Math.min(yScale(d), 25);
           })
           .delay(750)
           .duration(500);

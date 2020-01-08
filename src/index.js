@@ -22,38 +22,52 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 }).then(data => {
   nutritionData = data;
   console.log(nutritionData);
-
-  nutritionData.forEach((foodData, idx) => {
-      createVisualization(foodData, idx);
-  });
+  
+  createVisualization(nutritionData[0], 0);
+//   nutritionData.forEach((foodData, idx) => {
+//       createVisualization(foodData, idx);
+//   });
 
 });
 
 const createVisualization = (foodData, idx) => {
-  let w = 600;
-  let h = 500;
+  let margin = {top: 40, right: 40, bottom: 65, left: 50}
+  let w = 700 - margin.left - margin.right;
+  let h = 600 - margin.top - margin.bottom;
 
   let data = Object.values(foodData).slice(2, -1);
   let numberOfColumns = 10;
-  let maxValue = d3.max(data, function(d) {
-    return +d;
-  });
-  let x_axisLength = w - 50;
-  let y_axisLength = h - 50;
+  let maxValue = .50;
+//   let maxValue = d3.max(data, function(d) {
+//     return +d;
+//   });
+  let x_axisLength = w;
+  let y_axisLength = h;
   let targetSlide = "#slide-svg-" + idx;
   let targetSlideRect = "slide-svg-" + idx + "-rect";
+
+  let xScale = d3
+    .scaleLinear()
+    .domain([0, numberOfColumns])
+    .range([0, w]);
 
   let yScale = d3
     .scaleLinear()
     .domain([0, maxValue])
-    .range([0, y_axisLength]);
+    // .domain([maxValue, 0])
+    // .range([h, 0]);
+    .range([h - margin.top, margin.bottom]);
+//   let yScale = d3
+//     .scaleLinear()
+//     .domain([0, maxValue])
+//     .range([0, y_axisLength + 50]);
 
   let svg = d3
     // .select(`${targetSlide}`)
-    .select(`#slide-svg-0`)
+    .select("#vis")
     .append("svg")
-    .attr("width", w)
-    .attr("height", h);
+    .attr("width", w + margin.left + margin.right)
+    .attr("height", h + margin.top + margin.bottom);
 
   svg
     .selectAll("rect")
@@ -62,19 +76,46 @@ const createVisualization = (foodData, idx) => {
     .append("rect")
     .attr("class", `${targetSlideRect}`)
     .attr("x", function(d, i) {
-      return i * (x_axisLength / numberOfColumns) + 25;
+      return i * (x_axisLength / numberOfColumns) + margin.left + 10;
     })
     .attr("y", function(d) {
-    //   return h - yScale(d);
-      return 500;
+    //   return yScale(d);
+      return yScale(d / 100);
     })
     .attr("width", x_axisLength / numberOfColumns - 1)
     .attr("height", function(d) {
-      return yScale(d);
+      return h - yScale(d / 100) - margin.top;
     })
     .attr("fill", "red")
     .transition()
     .duration(500);
+
+    // d3
+    //   .tickValues(
+    //       ['Fiber', 'Iron', 'Magnesium', 'Potassium', 'Zinc', 'Vitamin C', 'Folate', 'Vitamin B-12', 'Vitamin A', 'Vitamin D']
+    //   )
+
+    let yAxis = d3.axisLeft(yScale).ticks(4, "%");
+
+    svg
+      .append("g")
+      .attr("class", "y-axis")
+      .attr(
+        "transform",
+        "translate(" + margin.left + ",0)"
+      )
+      .transition()
+      .duration(1000)
+      .call(yAxis);
+
+    //   .axis()
+    //   .scale(yScale)
+    //   .orient("left")
+    //   .tickSize(0);
+
+
+
+
 };
 
 
@@ -95,134 +136,10 @@ const createObservers = (slides) => {
       root: null,
       rootMargin: "0px 0px 0px 0px",
       threshold: .5
-    //   threshold: .05
     };
 
     
-    Slides.avocadoSlide(0, options, slides[0], nutritionData);
-    Slides.bananaSlide(1, options, slides[1], nutritionData);
-
-    // for (let i = 0; i < 18; i++) {
-    //     handleScrollOntoWrapper(i, options, slides[i]);
-    // }
+    // Slides.avocadoSlide(0, options, slides[0], nutritionData);
+    // Slides.bananaSlide(1, options, slides[1], nutritionData);
 
 }
-
-const handleScrollOntoWrapper = (idx, options, slide) => {
-    // debugger;
-    let foodData = nutritionData[idx];
-
-    let targetSlide = ".slide-svg-" + idx;
-    let targetSlideRect = targetSlide + "-rect";
-
-    const handleScrollOnto = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-            // if (entry.intersectionRatio <= 0.80) {
-              let singleFoodData = Object.values(foodData).slice(2, -1);
-
-
-              // console.log(singleFoodData);
-              console.log(nutritionData[idx].food_name);
-              console.log(entry.intersectionRatio);
-            //   console.log(entry.boundingClientRect);
-              let maxValue = d3.max(singleFoodData, function(d) {
-                return +d;
-              });
-              let y_axisLength = 450;
-
-              let yScale = d3
-                .scaleLinear()
-                .domain([0, maxValue])
-                .range([0, y_axisLength]);
-
-              // d3.selectAll(`${targetSlideRect}`)
-              d3.selectAll(`rect`)
-                .data(singleFoodData)
-                .transition()
-                .attr("y", function(d) {
-                  return 500 - yScale(d);
-                })
-                .attr("height", function(d) {
-                  return yScale(d);
-                })
-                .duration(500);
-            } else {
-            //   console.log(nutritionData[idx].food_name);
-            //   console.log(entry.intersectionRatio);
-              d3.selectAll(`rect`)
-                // d3.selectAll(`${targetSlideRect}`)
-                // d3.selectAll("#slide-svg-0-rect")
-                .transition()
-                .attr("y", 500)
-                .duration(500);
-            }
-        });
-    };
-
-    let observer = new IntersectionObserver(handleScrollOnto, options);
-    observer.observe(slide);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const handleScrollOnto = (entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-
-//             let singleFoodData = Object.values(nutritionData[0]).slice(2, -1);
-//             let maxValue = d3.max(singleFoodData, function(d) {
-//             return +d;
-//             });
-//             // let x_axisLength = w - 50;
-//             let y_axisLength = 450;
-
-//             let yScale = d3
-//             .scaleLinear()
-//             .domain([0, maxValue])
-//             .range([0, y_axisLength]);
-
-
-//             d3.selectAll("rect")
-//               .data(singleFoodData)
-//               .transition()
-//               .attr("y", function(d) {
-//                 return 500 - yScale(d);
-//               })
-//               .attr("height", function(d) {
-//                 return yScale(d);
-//               })
-//               .duration(500)
-//             //   .delay(500);
-
-//             // createVisualization(nutritionData[0]);
-//             // entry.target.style.opacity = "100%";
-//             // entry.target.style.transform = "translateX(0%)";
-//             // entry.target.style.visibility = "visible";
-//         } else {
-//             d3.selectAll("rect")
-//             .transition()
-//             .attr("y", 500)
-//             .duration(500);
-//             // entry.target.style.opacity = "0%";
-//             // entry.target.style.visibility = "hidden";
-//             // entry.target.style.transform = "translateX(50%)";
-//         }
-//     })
-// }
-
-

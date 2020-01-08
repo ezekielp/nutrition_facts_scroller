@@ -11,140 +11,100 @@
 <body>
     <script src="./dist/main.js"></script>
     <h1>Nutrition facts scroller</h1>
-    <div id="viewable-area">
-        <!-- <div class="slide-container">
-            <div class="slide-text-area">
-                HELLO AND WELCOME!
+    <div class="background-container">
+        <div id="viewable-area">
+            <div class="slide-container" id="slide-container-0">
+                <div class="slide-text-area">
+                    Banana
+                </div>
+                <div class="slide-svg-container" id="vis"></div>
             </div>
-            <div class="slide-svg-container" id="intro-slide">HELLO AND WELCOME!</div>
-        </div> -->
-        <div class="slide-container" id="slide-container-0">
-            <div class="slide-text-area">
-                Avocado
+            <div class="slide-container" id="slide-container-1">
+                <div class="slide-text-area">
+                    Potato
+                </div>
             </div>
-            <div class="slide-svg-container" id="slide-svg-0"></div>
+            <div class="slide-container" id="slide-container-2">
+                <div class="slide-text-area">
+                    Butter
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-3">
+                <div class="slide-text-area">
+                    Avocado
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-4">
+                <div class="slide-text-area">
+                    Beef liver
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-5">
+                <div class="slide-text-area">
+                    Cod liver
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-6">
+                <div class="slide-text-area">
+                    Egg
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-7">
+                <div class="slide-text-area">
+                    Herring
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-8">
+                <div class="slide-text-area">
+                    Tuna
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-9">
+                <div class="slide-text-area">
+                    Broccoli
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-10">
+                <div class="slide-text-area">
+                    Green peas
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-11">
+                <div class="slide-text-area">
+                    Red bell pepper
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-12">
+                <div class="slide-text-area">
+                    Oysters
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-13">
+                <div class="slide-text-area">
+                    Spinach
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-14">
+                <div class="slide-text-area">
+                    Quinoa
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-15">
+                <div class="slide-text-area">
+                    Dark chocolate
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-16">
+                <div class="slide-text-area">
+                    Strawberries
+                </div>
+            </div>
+            <div class="slide-container" id="slide-container-17">
+                <div class="slide-text-area">
+                    Navy beans
+                </div>
+            </div>
         </div>
-        <div class="slide-container" id="slide-container-1">
-            <div class="slide-text-area">
-                Banana
-            </div>
-            <div class="slide-svg-container" id="slide-svg-1"></div>
-        </div>
-        <div class="slide-container" id="slide-container-2">
-            <div class="slide-text-area">
-                Beef liver
-            </div>
-            <div class="slide-svg-container" id="slide-svg-2"></div>
-        </div>
-        <div class="slide-container" id="slide-container-3">
-            <div class="slide-text-area">
-                Broccoli
-            </div>
-            <div class="slide-svg-container" id="slide-svg-3"></div>
-        </div>
-        <div class="slide-container" id="slide-container-4">
-            <div class="slide-text-area">
-                Butter
-            </div>
-            <div class="slide-svg-container" id="slide-svg-4"></div>
-        </div>
-        <div class="slide-container" id="slide-container-5">
-            <div class="slide-text-area">
-                Butternut squash
-            </div>
-            <div class="slide-svg-container" id="slide-svg-5"></div>
-        </div>
-        <div class="slide-container" id="slide-container-6">
-            <div class="slide-text-area">
-                Dark chocolate
-            </div>
-            <div class="slide-svg-container" id="slide-svg-6"></div>
-        </div>
-        <div class="slide-container" id="slide-container-7">
-            <div class="slide-text-area">
-                Cod liver
-            </div>
-            <div class="slide-svg-container" id="slide-svg-7"></div>
-        </div>
-        <div class="slide-container" id="slide-container-8">
-            <div class="slide-text-area">
-                Egg
-            </div>
-            <div class="slide-svg-container" id="slide-svg-8"></div>
-        </div>
-        <div class="slide-container" id="slide-container-9">
-            <div class="slide-text-area">
-                Green peas
-            </div>
-            <div class="slide-svg-container" id="slide-svg-9"></div>
-        </div>
-        <div class="slide-container" id="slide-container-10">
-            <div class="slide-text-area">
-                ???
-            </div>
-            <div class="slide-svg-container" id="slide-svg-10"></div>
-        </div>
-        <div class="slide-container" id="slide-container-11">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-11"></div>
-        </div>
-        <div class="slide-container" id="slide-container-12">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-12"></div>
-        </div>
-        <div class="slide-container" id="slide-container-13">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-13"></div>
-        </div>
-        <div class="slide-container" id="slide-container-14">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-14"></div>
-        </div>
-        <div class="slide-container" id="slide-container-15">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-15"></div>
-        </div>
-        <div class="slide-container" id="slide-container-16">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-16"></div>
-        </div>
-        <div class="slide-container" id="slide-container-17">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-17"></div>
-        </div>
-        <div class="slide-container" id="slide-container-18">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-18"></div>
-        </div>
-        <div class="slide-container" id="slide-container-19">
-            <div class="slide-text-area">
-                Welcome to the scroller
-            </div>
-            <div class="slide-svg-container" id="slide-svg-19"></div>
-        </div>
-        <!-- <div class="slide-container">
-            <div class="slide-text-area">
-                Here is the text for the first slide
-            </div>
-            <div id="red-box"></div>
-        </div>
-        <div id="blue-box"></div> -->
     </div>
 </body>
 </html>
