@@ -1,4 +1,5 @@
 import './styles/index.scss';
+import * as Slides from './scripts/scroll/slides';
 
 let nutritionData;
 
@@ -48,8 +49,8 @@ const createVisualization = (foodData, idx) => {
     .range([0, y_axisLength]);
 
   let svg = d3
-    // .select("#slide-svg-0")
-    .select(`${targetSlide}`)
+    // .select(`${targetSlide}`)
+    .select(`#slide-svg-0`)
     .append("svg")
     .attr("width", w)
     .attr("height", h);
@@ -59,13 +60,13 @@ const createVisualization = (foodData, idx) => {
     .data(data)
     .enter()
     .append("rect")
-    // .attr("class", "#slide-svg-0-rect")
     .attr("class", `${targetSlideRect}`)
     .attr("x", function(d, i) {
       return i * (x_axisLength / numberOfColumns) + 25;
     })
     .attr("y", function(d) {
-      return h - yScale(d);
+    //   return h - yScale(d);
+      return 500;
     })
     .attr("width", x_axisLength / numberOfColumns - 1)
     .attr("height", function(d) {
@@ -93,19 +94,22 @@ const createObservers = (slides) => {
     let options = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: [.15, .85]
+      threshold: .5
     //   threshold: .05
     };
 
     
-    for (let i = 0; i < 18; i++) {
-        handleScrollOntoWrapper(i, options, slides[i]);
-    }
+    Slides.avocadoSlide(0, options, slides[0], nutritionData);
+    Slides.bananaSlide(1, options, slides[1], nutritionData);
+
+    // for (let i = 0; i < 18; i++) {
+    //     handleScrollOntoWrapper(i, options, slides[i]);
+    // }
 
 }
 
 const handleScrollOntoWrapper = (idx, options, slide) => {
-    debugger;
+    // debugger;
     let foodData = nutritionData[idx];
 
     let targetSlide = ".slide-svg-" + idx;
@@ -117,11 +121,11 @@ const handleScrollOntoWrapper = (idx, options, slide) => {
             // if (entry.intersectionRatio <= 0.80) {
               let singleFoodData = Object.values(foodData).slice(2, -1);
 
+
               // console.log(singleFoodData);
               console.log(nutritionData[idx].food_name);
               console.log(entry.intersectionRatio);
-              console.log(entry.boundingClientRect);
-              // createVisualization(foodData, idx);
+            //   console.log(entry.boundingClientRect);
               let maxValue = d3.max(singleFoodData, function(d) {
                 return +d;
               });
