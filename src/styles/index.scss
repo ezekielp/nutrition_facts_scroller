@@ -17,6 +17,14 @@ body {
     z-index: 0; */
 }
 
+.flying-banana {
+    background-image: url('./bananas.svg');
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 100;
+}
+
 #viewable-area {
     overflow-y: scroll;
     overflow-x: hidden;

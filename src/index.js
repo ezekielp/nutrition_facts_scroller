@@ -2,6 +2,7 @@ import './styles/index.scss';
 import * as Slides from './scripts/scroll/slides';
 
 let nutritionData;
+let bananaCounter = 0;
 
 d3.csv("nutrition_facts_for_scroller.csv", d => {
   return {
@@ -127,6 +128,77 @@ window.addEventListener("load", (e) => {
     }
     createObservers(slides);
 }, false);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document
+      .getElementById("banana-svg-container")
+      .addEventListener("click", e => {
+
+        let upwardMove, downwardMove;
+
+        let bananaIcon = document.getElementById(
+            "banana-svg-container"
+        );
+        let bananaIconPos = {
+            top: bananaIcon.getBoundingClientRect().top,
+            left: bananaIcon.getBoundingClientRect().left
+        };
+
+        let movementFunc = newBanana => {
+          let newBananaPos = {
+            top: newBanana.getBoundingClientRect().top,
+            left: newBanana.getBoundingClientRect().left
+          };
+
+          let frameUpward = () => {
+              if (newBananaPos.left > 350) {
+                clearInterval(upwardMove);
+                downwardMove = setInterval(frameDownward, 3);
+              } else {
+                newBananaPos.top -= Math.floor(Math.random() * 5);
+                newBananaPos.left += Math.floor(Math.random() * 8);
+
+                newBanana.style.top = newBananaPos.top + "px";
+                newBanana.style.left = newBananaPos.left + "px";
+              }
+          }
+
+            upwardMove = setInterval(frameUpward, 3);
+
+          let frameDownward = () => {
+            if (newBananaPos.top > 1500) {
+              clearInterval(downwardMove);
+            } else {
+              newBananaPos.top += Math.floor(Math.random() * 5);
+              newBananaPos.left += Math.floor(Math.random() * 8);
+
+              newBanana.style.top = newBananaPos.top + "px";
+              newBanana.style.left = newBananaPos.left + "px";
+            }
+          };
+        };
+
+        let i = bananaCounter;
+        bananaCounter += 1;
+        let newBanana = document.createElement("div");
+        newBanana.setAttribute('id', `flying-banana-${i}`);
+        newBanana.classList.add(`flying-banana`);
+        bananaIcon.appendChild(newBanana);
+
+
+        let thisOneParticularBanana = document.getElementById(
+            `flying-banana-${i}`
+        );
+        thisOneParticularBanana.style.top = bananaIconPos.top + "px";
+        thisOneParticularBanana.style.left = bananaIconPos.left + "px";
+
+        movementFunc(thisOneParticularBanana);
+      });
+
+})
+
 
 const createObservers = (slides) => {
     
