@@ -13,11 +13,11 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
     magnesium: +d["Magnesium"],
     potassium: +d["Potassium"],
     zinc: +d["Zinc"],
-    vitamin_c: +d["Vitamin C"],
+    "vitamin C": +d["Vitamin C"],
     folate: +d["Folate"],
-    vitamin_b12: +d["Vitamin B-12"],
-    vitamin_a: +d["Vitamin A"],
-    vitamin_d: +d["Vitamin D"],
+    "vitamin B12": +d["Vitamin B-12"],
+    "vitamin A": +d["Vitamin A"],
+    "vitamin D": +d["Vitamin D"],
     cholesterol: +d["Cholesterol"]
   };
 }).then(data => {
@@ -146,110 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 bananaIcon.removeChild(bananaChildren[3]);
             }
         }
-        // for (let i = 3; i < bananaChildren.length + 3; i++) {
-        // }
-
-
-        let upwardMove, downwardMove;
-
-        let bananaIconPos = {
-            top: bananaIcon.getBoundingClientRect().top,
-            left: bananaIcon.getBoundingClientRect().left
-        };
 
         let movementFunc = newBanana => {
-          let newBananaPos = {
-            top: Math.floor(Math.random() * -5),
-            left: Math.floor(Math.random() * window.innerWidth)
-          };
 
-        //   let frameUpward = () => {
-        //       if (newBananaPos.left > 350) {
-        //         clearInterval(upwardMove);
-        //         downwardMove = setInterval(frameDownward, 3);
-        //       } else {
-        //         newBananaPos.top -= Math.floor(Math.random() * 5);
-        //         newBananaPos.left += Math.floor(Math.random() * 8);
+          let start = null;
 
-        //         newBanana.style.top = newBananaPos.top + "px";
-        //         newBanana.style.left = newBananaPos.left + "px";
-        //       }
-        //   }
-
-        //     upwardMove = setInterval(frameUpward, 3);
-
-        //   let velocity = 0;
-
-          let velocity = Math.floor(Math.random() * 10);
-
-          let frameDownward = () => {
-            if (newBananaPos.top > 1500) {
-            clearInterval(downwardMove);
-            //   bananaIcon.removeChild(newBanana);
-            } else {
-              newBananaPos.top += (velocity + 5);
-            //   newBananaPos.top *= -1.1;
-            //   newBananaPos.left += Math.floor(Math.random() * 8);
-            //   newBananaPos.right += Math.floor(Math.random() * 8);
-
-              newBanana.style.top = newBananaPos.top + "px";
-            //   newBanana.style.left = newBananaPos.left + "px";
-            //   newBanana.style.right = newBananaPos.right + "px";
+          const step = (timestamp) => {
+            if (!start) start = timestamp;
+            let progress = timestamp - start;
+            newBanana.style.transform =
+              "translateY(" + (progress) + "px)";
+            if (progress < 5000) {
+              window.requestAnimationFrame(step);
             }
-          };
-          downwardMove = setInterval(frameDownward, 2);
+          }
 
-        //   setTimeout(() => {
+          window.requestAnimationFrame(step);
 
-        //     bananaIcon.removeChild(newBanana);
-
-            // let bananaChildren = bananaIcon.childNodes;
-            // debugger;
-
-            // for (let i = 0; i < 20; i++) {
-            //     debugger;
-            // }
-            // for (let i = 3; i < bananaChildren.length + 3; i++) {
-            //     bananaIcon.removeChild(bananaChildren[i]);
-            // }
-        //   }, 1000);
-
-        };
-
-        // let movementFunc = newBanana => {
-        //   let newBananaPos = {
-        //     top: newBanana.getBoundingClientRect().top,
-        //     left: newBanana.getBoundingClientRect().left
-        //   };
-
-        //   let frameUpward = () => {
-        //       if (newBananaPos.left > 350) {
-        //         clearInterval(upwardMove);
-        //         downwardMove = setInterval(frameDownward, 3);
-        //       } else {
-        //         newBananaPos.top -= Math.floor(Math.random() * 5);
-        //         newBananaPos.left += Math.floor(Math.random() * 8);
-
-        //         newBanana.style.top = newBananaPos.top + "px";
-        //         newBanana.style.left = newBananaPos.left + "px";
-        //       }
-        //   }
-
-        //     upwardMove = setInterval(frameUpward, 3);
-
-        //   let frameDownward = () => {
-        //     if (newBananaPos.top > 1500) {
-        //       clearInterval(downwardMove);
-        //     } else {
-        //       newBananaPos.top += Math.floor(Math.random() * 5);
-        //       newBananaPos.left += Math.floor(Math.random() * 8);
-
-        //       newBanana.style.top = newBananaPos.top + "px";
-        //       newBanana.style.left = newBananaPos.left + "px";
-        //     }
-        //   };
-        // };
-
+        }
 
         for (let i = bananaCounter; i < bananaCounter + 20; i++) {
             let newBanana = document.createElement("div");
@@ -260,53 +174,30 @@ document.addEventListener("DOMContentLoaded", () => {
             let thisOneParticularBanana = document.getElementById(
             `flying-banana-${i}`
             );
-            thisOneParticularBanana.style.top = "-5px";
+            thisOneParticularBanana.style.top = (Math.random() * -200) + "px";
             thisOneParticularBanana.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
 
             movementFunc(thisOneParticularBanana);
         }
 
         bananaCounter += 10;
-        // let i = bananaCounter;
-        // bananaCounter += 1;
-        // let newBanana = document.createElement("div");
-        // newBanana.setAttribute('id', `flying-banana-${i}`);
-        // newBanana.classList.add(`flying-banana`);
-        // bananaIcon.appendChild(newBanana);
 
-
-        // let thisOneParticularBanana = document.getElementById(
-        //     `flying-banana-${i}`
-        // );
-        // thisOneParticularBanana.style.top = bananaIconPos.top + "px";
-        // thisOneParticularBanana.style.left = bananaIconPos.left + "px";
-
-        // movementFunc(thisOneParticularBanana);
       });
 
 })
-
 
 const createObservers = (slides) => {
     
     let options = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: .3
+      threshold: .5
     };
 
     console.log(slides);
     
-    // Slides.bananaSlide(options, slides[0]);
-    // Slides.potatoSlide(options, slides[1]);
-    // Slides.butterSlide(options, slides[2]);
-    // Slides.avocadoSlide(options, slides[3]);
-    // Slides.beefLiverSlide(options, slides[4]);
-    // Slides.codLiverSlide(options, slides[5]);
-
     for (let i = 0; i < slides.length - 1; i++) {
       Slides.renderSlide(options, slides[i], i);
     }
-
 
 }

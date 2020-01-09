@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 #main-header {
@@ -16,10 +17,22 @@ body {
     z-index: 100;
 }
 
+#banana-text-area {
+    width: 400px;
+}
+
+.svg-immediate-container img {
+    width: 200px;
+}
+
+.svg-immediate-container {
+    text-align: center;
+}
+
 #viewable-area {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 1000px;
+    width: 1100px;
     height: 500px;
     background-color: white;
     margin: auto;
@@ -32,6 +45,7 @@ body {
 
 .slide-svg-container svg {
     position: absolute;
+    margin-left: 50px;
 }
 
 .y-axis path {
@@ -40,40 +54,118 @@ body {
 
 .slide-container {
     display: flex;
-    height: 800px;
+    height: 500px;
     width: 100%;
 }
 
 .slide-text-area {
-    width: 400px;
-    height: 500px;
+    width: 292.5px;
+    height: auto;
     font-size: 30px;
-    border-top: 1px solid black;
     box-sizing: border-box;
 }
 
+.slide-header {
+    font-size: 30px;
+}
+
+.slide-body-text {
+    font-size: 20px;
+}
+
+.serving-size-div {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Banana */
 .slide-svg-0-rect {
     fill: #FEC800;
 }
 
+/* Potato */
 .slide-svg-1-rect {
     fill: #A7883A;
 }
 
+/* Butter */
 .slide-svg-2-rect {
     fill: #FFE44C;
 }
 
+/* Avocado */
 .slide-svg-3-rect {
     fill: #568203;
 }
 
+/* Beef liver */
 .slide-svg-4-rect {
     fill: #B71511;
 }
 
+/* Cod liver */
 .slide-svg-5-rect {
     fill: #E6A888;
+}
+
+/* Egg */
+.slide-svg-6-rect {
+    fill: #FFF5C2;
+}
+
+/* Herring */
+.slide-svg-7-rect {
+    fill: #E2C1B2;
+}
+
+/* Tuna */
+.slide-svg-8-rect {
+    fill: #EF6285;
+}
+
+/* Broccoli */
+.slide-svg-9-rect {
+    fill: #84BB4C;
+}
+
+/* Green peas */
+.slide-svg-10-rect {
+    fill: #3BAD46;
+}
+
+/* Sweet red pepper */
+.slide-svg-11-rect {
+    fill: #E01200;
+}
+
+/* Oysters */
+.slide-svg-12-rect {
+    fill: #D3CFA0;
+}
+
+/* Spinach */
+.slide-svg-13-rect {
+    fill: #4D8B00;
+}
+
+/* Quinoa */
+.slide-svg-14-rect {
+    fill: #F1D78B;
+}
+
+/* Chocolate */
+.slide-svg-15-rect {
+    fill: #663A00;
+}
+
+/* Strawberries */
+.slide-svg-16-rect {
+    fill: #DD1334;
+}
+
+/* Navy beans */
+.slide-svg-17-rect {
+    fill: #B76120;
 }
 
 .hidden {

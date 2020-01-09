@@ -7,6 +7,7 @@
     <title>Nutrition Facts Scroller</title>
     <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./dist/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
     <script src="./dist/main.js"></script>
@@ -14,32 +15,65 @@
         <div id="viewable-area">
             <h1 id="main-header">Nutrition facts scroller</h1>
             <div class="slide-container" id="slide-container-0">
-                <div class="slide-text-area banana-text-area">
-                    <div>Banana</div>
-                    <div id="banana-svg-container">
+                <div id="banana-text-area" class="slide-text-area">
+                    <div id="banana-svg-container" class="svg-immediate-container">
                         <img src="./src/styles/bananas.svg" alt="banana">
                     </div>
+                    <div class="slide-header">Banana</div>
+                    <div class="slide-body-text">
+                        Let’s start with a ripe yellow banana. A very healthy food, right? Lots of potassium! But scroll down to find out which humdrum food has twice as much of the essential electrolyte bananas are famous for.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 medium banana (7-8" long)</div>
                 </div>
                 <div class="slide-svg-container" id="vis"></div>
             </div>
             <div class="slide-container" id="slide-container-1">
                 <div class="slide-text-area">
-                    Potato
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/potato.svg" alt="potato">
+                    </div>
+                    <div class="slide-header">Potato</div>
+                    <div class="slide-body-text">
+                        That's right, the humble potato! Potatoes are one of the richest food sources of potassium, which is important for muscle contraction and helps regulate fluid balance in the body. They also have a significant amount of vitamin C, folate, and magnesium.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 medium potato (2.25-3.25" diameter)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-2">
                 <div class="slide-text-area">
-                    Butter
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/butter.svg" alt="butter">
+                    </div>
+                    <div class="slide-header">Butter</div>
+                    <div class="slide-body-text">
+                        (Just make sure to eat your potato with some butter or other fat. It helps slow down digestion of the starch and improve your body's absorption of the potato's nutrients. It also tastes good.)
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 tablespoon</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-3">
                 <div class="slide-text-area">
-                    Avocado
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/avocado.svg" alt="avocado">
+                    </div>
+                    <div class="slide-header">Avocado</div>
+                    <div class="slide-body-text">
+                        Speaking of potassium, avocadoes are another excellent source of the electrolyte, along with other nutrients, especially folate, which works with vitamin B12 in the production of red blood cells.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 medium avocado</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-4">
                 <div class="slide-text-area">
-                    Beef liver
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/liver.svg" alt="beef liver">
+                    </div>
+                    <div class="slide-header">Beef liver</div>
+                    <div class="slide-body-text">
+                        Let’s get some protein to go with all this potassium. How about some liver? No but seriously — it’s a wonder food: one
+                        of the richest sources of vitamin A and vitamin B-12, key nutrients for your bones, skin and brain.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 slice (81 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-5">
