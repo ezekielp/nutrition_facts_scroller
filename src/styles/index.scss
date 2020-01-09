@@ -1,20 +1,11 @@
 body {
+    overflow: hidden;
 }
 
 #main-header {
     position: sticky;
     top: 0;
     background-color: white;
-}
-
-.background-container {
-    /* overflow-y: hidden;
-    background-image: url('./bananas.svg');
-    background-repeat: repeat;
-    background-size: 100px 100px;
-    width: 1100px;
-    height: 800px;
-    z-index: 0; */
 }
 
 .flying-banana {
@@ -75,6 +66,14 @@ body {
 
 .slide-svg-3-rect {
     fill: #568203;
+}
+
+.slide-svg-4-rect {
+    fill: #B71511;
+}
+
+.slide-svg-5-rect {
+    fill: #E6A888;
 }
 
 .hidden {

@@ -140,7 +140,6 @@ export const avocadoSlide = (options, slide) => {
           rect.classList.add("hidden");
         });
 
-
         d3.select(".slide-svg-3-y-axis")
           .transition()
           .style("opacity", "100%")
@@ -163,24 +162,200 @@ export const avocadoSlide = (options, slide) => {
   observer.observe(slide);
 };    
 
-
 export const beefLiverSlide = (options, slide) => {
 
+  const handleBeefLiverScrollOnto = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let beefLiverRects = document.querySelectorAll(`.slide-svg-4-rect`);
+        beefLiverRects.forEach(rect => {
+        rect.classList.remove("hidden");
+        });
 
+        let avocadoRects = document.querySelectorAll(`.slide-svg-3-rect`);
+        avocadoRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        let codLiverRects = document.querySelectorAll(`.slide-svg-5-rect`);
+        codLiverRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        d3.select(".slide-svg-4-y-axis")
+          .transition()
+          .style("opacity", "100%")
+          .duration(500);
+
+        d3.select(".slide-svg-3-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+
+        d3.select(".slide-svg-5-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(handleBeefLiverScrollOnto, options);
+  observer.observe(slide);
 
 }
 
 export const codLiverSlide = (options, slide) => {
 
+  const handleCodLiverScrollOnto = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let codLiverRects = document.querySelectorAll(`.slide-svg-5-rect`);
+        codLiverRects.forEach(rect => {
+        rect.classList.remove("hidden");
+        });
 
+        let beefLiverRects = document.querySelectorAll(`.slide-svg-4-rect`);
+        beefLiverRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        let eggRects = document.querySelectorAll(`.slide-svg-6-rect`);
+        eggRects.forEach(rect => {
+          rect.classList.add("hidden");
+        });
+
+        d3.select(".slide-svg-5-y-axis")
+          .transition()
+          .style("opacity", "100%")
+          .duration(500);
+
+        d3.select(".slide-svg-4-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+
+        d3.select(".slide-svg-6-y-axis")
+          .transition()
+          .style("opacity", "0%")
+          .duration(500);
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(handleCodLiverScrollOnto, options);
+  observer.observe(slide);
 
 }
 
-export const eggSlide = (options, slide) => {
 
 
+export const renderSlide = (options, slide, idx) => {
+
+  const handleScrollOnto = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        document.querySelectorAll(`.slide-svg-${idx}-rect`).forEach(rect => {
+          rect.classList.remove("hidden");
+        });
+
+        if (document.querySelectorAll(`.slide-svg-${idx - 1}-rect`)) {
+            document
+              .querySelectorAll(`.slide-svg-${idx - 1}-rect`)
+              .forEach(rect => {
+                rect.classList.add("hidden");
+              });
+        }
+
+        if (document.querySelectorAll(`.slide-svg-${idx + 1}-rect`)) {
+            document
+              .querySelectorAll(`.slide-svg-${idx + 1}-rect`)
+              .forEach(rect => {
+                rect.classList.add("hidden");
+              });
+        }
+
+        // document.querySelectorAll(`.slide-svg-${idx + 1}-rect`).forEach(rect => {
+        //   rect.classList.add("hidden");
+        // });
+
+        d3.select(`.slide-svg-${idx}-y-axis`)
+          .transition()
+          .style("opacity", "100%")
+          .duration(500);
+
+
+        if (document.querySelector(`.slide-svg-${idx - 1}-y-axis`)) {
+            d3.select(`.slide-svg-${idx - 1}-y-axis`)
+              .transition()
+              .style("opacity", "0%")
+              .duration(500);
+        }
+
+        if (document.querySelector(`.slide-svg-${idx + 1}-y-axis`)) {
+            d3.select(`.slide-svg-${idx + 1}-y-axis`)
+              .transition()
+              .style("opacity", "0%")
+              .duration(500);
+        }
+
+
+
+        // d3.select(`.slide-svg-${idx + 1}-y-axis`)
+        //   .transition()
+        //   .style("opacity", "0%")
+        //   .duration(500);
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(handleScrollOnto, options);
+  observer.observe(slide);
 
 }
+// export const eggSlide = (options, slide) => {
+
+//     let idx = 6;
+
+//   const handleEggScrollOnto = (entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+
+//         document.querySelectorAll(`.slide-svg-${idx}-rect`).forEach(rect => {
+//           rect.classList.remove("hidden");
+//         });
+
+//         document.querySelectorAll(`.slide-svg-${idx - 1}-rect`).forEach(rect => {
+//           rect.classList.add("hidden");
+//         });
+
+//         document.querySelectorAll(`.slide-svg-${idx + 1}-rect`).forEach(rect => {
+//           rect.classList.add("hidden");
+//         });
+
+//         d3.select(`.slide-svg-${idx}-y-axis`)
+//           .transition()
+//           .style("opacity", "100%")
+//           .duration(500);
+
+//         d3.select(`.slide-svg-${idx - 1}-y-axis`)
+//           .transition()
+//           .style("opacity", "0%")
+//           .duration(500);
+
+//         d3.select(`.slide-svg-${idx + 1}-y-axis`)
+//           .transition()
+//           .style("opacity", "0%")
+//           .duration(500);
+//       }
+//     });
+//   };
+
+//   let observer = new IntersectionObserver(handleEggScrollOnto, options);
+//   observer.observe(slide);
+
+// }
 
 export const herringSlide = (options, slide) => {
 
