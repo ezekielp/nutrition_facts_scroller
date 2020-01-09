@@ -63,6 +63,39 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("width", w + margin.left + margin.right)
     .attr("height", h + margin.top + margin.bottom);
 
+  let xAxis = d3
+    .axisBottom(xScale)
+    .tickSize(0)
+    .tickFormat(function(d) {
+      return Object.keys(foodData).slice(2, -1)[d];
+    });
+
+  if (createXAxisBool !== undefined) {
+    svg
+      .append("g")
+      .attr("class", `${targetSVG}-x-axis x-axis`)
+      .attr(
+        "transform",
+        "translate(" + margin.left + ", " + (h - margin.top) + ")"
+      )
+      .transition()
+      .duration(1000)
+      .call(xAxis);
+
+    svg.selectAll(".x-axis text").attr("transform", function(d) {
+      return "translate(25, 25)rotate(-45)";
+    });
+  }
+
+  let yAxis = d3.axisLeft(yScale).ticks(4, "%");
+
+  svg
+    .append("g")
+    .attr("class", `${targetSVG}-y-axis y-axis`)
+    .attr("transform", "translate(" + margin.left + ",0)")
+    .style("opacity", "0%")
+    .call(yAxis);
+
   svg
     .selectAll("rect")
     .data(data)
@@ -82,39 +115,18 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("fill", "red")
     .transition()
     .duration(500);
+  //   .on("mouseover", handleMouseover);
 
-    let xAxis = d3
-                .axisBottom(xScale)
-                .tickSize(0)
-                .tickFormat(function(d) {
-                    return Object.keys(foodData).slice(2, -1)[d];
-                });
-
-
-    if (createXAxisBool !== undefined) {
-        svg
-            .append("g")
-            .attr("class", `${targetSVG}-x-axis x-axis`)
-            .attr("transform", "translate(" + margin.left + ", " + (h - margin.top) + ")")
-            .transition()
-            .duration(1000)
-            .call(xAxis)
-    
-        svg.selectAll(".x-axis text")
-            .attr("transform", function(d) {
-                return "translate(25, 25)rotate(-45)"; 
-            });
-    }
+  // const handleMouseover = (d, i) => {
+  //   d3.select(this)
+  //     .transition()
+  //     .ease("exp")
+  //     .duration(500)
+  //     .attr("fill", "white");
+  // };
 
 
-    let yAxis = d3.axisLeft(yScale).ticks(4, "%");
 
-    svg
-      .append("g")
-      .attr("class", `${targetSVG}-y-axis y-axis`)
-      .attr("transform", "translate(" + margin.left + ",0)")
-      .style("opacity", "0%")
-      .call(yAxis);
 
 };
 

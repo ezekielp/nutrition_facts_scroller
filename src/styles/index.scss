@@ -168,6 +168,16 @@ body {
     fill: #B76120;
 }
 
+.chart-rect:hover {
+    animation-name: animateColor;
+    animation-duration: 0.5s;
+}
+
+@keyframes animateColor {
+    from {fill: attr(fill) }
+    to {fill: white}
+}
+
 .hidden {
     display: none;
 }
