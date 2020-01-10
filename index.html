@@ -13,9 +13,9 @@
     <script src="./dist/main.js"></script>
     <div class="background-container">
         <div id="viewable-area">
-            <h1 id="main-header">Nutrition facts scroller</h1>
-            <div class="slide-container" id="slide-container-0">
-                <div id="banana-text-area" class="slide-text-area">
+            <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+            <div class="slide-container" id="banana-text-area">
+                <div id="slide-container-0" class="slide-text-area banana-text-area">
                     <div id="banana-svg-container" class="svg-immediate-container">
                         <img src="./src/styles/bananas.svg" alt="banana">
                     </div>
@@ -27,8 +27,8 @@
                 </div>
                 <div class="slide-svg-container" id="vis"></div>
             </div>
-            <div class="slide-container" id="slide-container-1">
-                <div class="slide-text-area">
+            <div class="slide-container">
+                <div class="slide-text-area" id="slide-container-1">
                     <div class="svg-immediate-container">
                         <img src="./src/styles/potato.svg" alt="potato">
                     </div>
@@ -40,6 +40,7 @@
                 </div>
             </div>
             <div class="slide-container" id="slide-container-2">
+                <a class="anchor" id="butter-anchor"></a>
                 <div class="slide-text-area">
                     <div class="svg-immediate-container">
                         <img src="./src/styles/butter.svg" alt="butter">
@@ -58,7 +59,7 @@
                     </div>
                     <div class="slide-header">Avocado</div>
                     <div class="slide-body-text">
-                        Speaking of potassium, avocadoes are another excellent source of the electrolyte, along with other nutrients, especially folate, which works with vitamin B12 in the production of red blood cells.
+                        Speaking of potassium, avocados are another excellent source of the electrolyte, along with other nutrients, especially folate, which works with vitamin B12 in the production of red blood cells.
                     </div>
                     <div class="serving-size-div">Serving size: 1 medium avocado</div>
                 </div>
@@ -70,78 +71,197 @@
                     </div>
                     <div class="slide-header">Beef liver</div>
                     <div class="slide-body-text">
-                        Let’s get some protein to go with all this potassium. How about some liver? No but seriously — it’s a wonder food: one
-                        of the richest sources of vitamin A and vitamin B-12, key nutrients for your bones, skin and brain.
+                        Let’s get some protein to go with all this potassium. How about some liver? No, seriously — it’s a wonder food: one
+                        of the richest sources of vitamin A and vitamin B12, key nutrients for your bones, skin and brain.
                     </div>
                     <div class="serving-size-div">Serving size: 1 slice (81 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-5">
                 <div class="slide-text-area">
-                    Cod liver
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/cod_liver.jpg" alt="beef liver">
+                    </div>
+                    <div class="slide-header">Cod liver</div>
+                    <div class="slide-body-text">
+                        Prefer seafood? Try cod liver instead (in a salad with boiled eggs and onion, for instance). It too also has a significant
+                        helping of vitamin A along with vitamin D, which promotes absorption of calcium in the gut.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1.7 oz (50 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-6">
                 <div class="slide-text-area">
-                    Egg
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/egg.svg" alt="egg">
+                    </div>
+                    <div class="slide-header">Egg</div>
+                    <div class="slide-body-text">
+                        The egg to go with your cod liver is also a truly wondrous food, high in vitamin B12, vitamin A, folate, and cholesterol (a misunderstood nutrient critical for brain function).
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 large (50 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-7">
                 <div class="slide-text-area">
-                    Herring
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/herring.svg" alt="herring">
+                    </div>
+                    <div class="slide-header">Herring</div>
+                    <div class="slide-body-text">
+                        If you want to stock up on beneficial omega-3 fatty acids as well as B12, try some herring. This fish, often neglected in the US, is full of nutrients, and delicious fishy flavor (an acquired taste, to be sure).
+                    </div>
+                    <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-8">
                 <div class="slide-text-area">
-                    Tuna
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/tuna.svg" alt="tuna">
+                    </div>
+                    <div class="slide-header">Tuna</div>
+                    <div class="slide-body-text">
+                        Herring, for instance, is superior nutritionally in many ways to the more popular tuna.
+                    </div>
+                    <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-9">
                 <div class="slide-text-area">
-                    Broccoli
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/broccoli.svg" alt="broccoli">
+                    </div>
+                    <div class="slide-header">Broccoli</div>
+                    <div class="slide-body-text">
+                        Let's add some veggies to the mix. As your mother likely told you, eat your broccoli — it has a fantastic nutritional profile, high in folate, potassium, fiber, and, perhaps surprisingly, vitamin C. 
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 cup (156 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-10">
                 <div class="slide-text-area">
-                    Green peas
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/peas.svg" alt="green peas">
+                    </div>
+                    <div class="slide-header">Green peas</div>
+                    <div class="slide-body-text">
+                        Peas have gone out of style but are another excellent food, high in many of the same nutrients as broccoli but also packing significant protein.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 cup (160 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-11">
                 <div class="slide-text-area">
-                    Red bell pepper
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/pepper.svg" alt="red bell pepper">
+                    </div>
+                    <div class="slide-header">Bell pepper</div>
+                    <div class="slide-body-text">
+                        Feeling a cold coming on? You could eat an orange for vitamin C — or a bell pepper. Just half a pepper has roughly the same amount of the nutrient as an orange.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1/2 medium pepper (59.5 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-12">
                 <div class="slide-text-area">
-                    Oysters
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/oyster.svg" alt="oyster">
+                    </div>
+                    <div class="slide-header">Oysters</div>
+                    <div class="slide-body-text">
+                        Another food you may want to eat when sick is ... oysters! The bivalve is absolutely brimming with zinc, with 6 oysters containing a whopping 347% of your recommended daily allowance, along with significant B12 and vitamin D.
+                    </div>
+                    <div class="serving-size-div">Serving size: 6 medium oysters (84 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-13">
                 <div class="slide-text-area">
-                    Spinach
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/spinach.svg" alt="spinach">
+                    </div>
+                    <div class="slide-header">Spinach</div>
+                    <div class="slide-body-text">
+                        So far the foods we've seen haven't had as much magnesium as the body needs. For this, you can snack on some spinach, another extremely nutritious food. Just add some olive oil and garlic for flavor.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1/4 cup cooked (45 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-14">
                 <div class="slide-text-area">
-                    Quinoa
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/quinoa.svg" alt="quinoa">
+                    </div>
+                    <div class="slide-header">Quinoa</div>
+                    <div class="slide-body-text">
+                        Another excellent source of magnesium is whole grains. Take quinoa, which has 33% of the RDA in a single cup.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 cup (185 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-15">
                 <div class="slide-text-area">
-                    Dark chocolate
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/chocolate.svg" alt="chocolate">
+                    </div>
+                    <div class="slide-header">Dark chocolate</div>
+                    <div class="slide-body-text">
+                        Okay, time for dessert. Let's start with some dark chocolate — another food with substantial magnesium, along with beneficial fats and antioxidants.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 oz (28.35 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-16">
                 <div class="slide-text-area">
-                    Strawberries
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/strawberry.svg" alt="strawberry">
+                    </div>
+                    <div class="slide-header">Strawberry</div>
+                    <div class="slide-body-text">
+                        Strawberries make a delicious pairing with chocolate. Also, did you know a cup of strawberries has more than 100% of your RDA for vitamin C?
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 cup halves (152 g)</div>
                 </div>
             </div>
             <div class="slide-container" id="slide-container-17">
                 <div class="slide-text-area">
-                    Navy beans
+                    <div class="svg-immediate-container">
+                        <img src="./src/styles/beans.svg" alt="beans">
+                    </div>
+                    <div class="slide-header">Navy beans</div>
+                    <div class="slide-body-text">
+                        We end our nutrition journey with the lowly bean — a food with an undistinguished reputation. Yet beans are some of the most nutritionally dense foods for humans. Just make sure to eat them with some starch
+                        or meat, as well as some fat, to get their full benefit.
+                    </div>
+                    <div class="serving-size-div">Serving size: 1 cup (182 g)</div>
                 </div>
             </div>
         </div>
+        <ul class="nav-column">
+            <li class="nav-li"></li>
+            <a href="#slide-container-1">
+                <li class="nav-li" id="nav-li-1"></li>
+            </a>
+            <a href="#butter-anchor">
+                <li class="nav-li" id="nav-li-2"></li>
+            </a>
+            <a href="#slide-container-3">
+                <li class="nav-li"></li>
+            </a>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+            <li class="nav-li"></li>
+        </ul>
     </div>
 </body>
 </html>

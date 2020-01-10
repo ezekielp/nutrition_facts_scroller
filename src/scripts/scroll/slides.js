@@ -8,6 +8,22 @@ export const renderSlide = (options, slide, idx) => {
           rect.classList.remove("hidden");
         });
 
+        // document
+        //   .querySelector(`#slide-container-${idx}`)
+        //   .classList.remove("opaque");
+        
+        // d3.selectAll(`.slide-svg-${idx}-rect`).on("mouseover", handleMouseover);
+
+        // const handleMouseover = (d, i) => {
+        //   debugger;
+        //   d3.select(this)
+        //     .transition()
+        //     .ease("ease")
+        //     .duration(500)
+        //     .attr("fill", "white");
+        // };
+
+
         if (document.querySelectorAll(`.slide-svg-${idx - 1}-rect`)) {
             document
               .querySelectorAll(`.slide-svg-${idx - 1}-rect`)
@@ -16,6 +32,12 @@ export const renderSlide = (options, slide, idx) => {
               });
         }
 
+        // if (document.querySelector(`#slide-container-${idx - 1}`)) {
+        //   document
+        //     .querySelector(`#slide-container-${idx - 1}`)
+        //     .classList.add("opaque");
+        // }
+
         if (document.querySelectorAll(`.slide-svg-${idx + 1}-rect`)) {
             document
               .querySelectorAll(`.slide-svg-${idx + 1}-rect`)
@@ -23,6 +45,12 @@ export const renderSlide = (options, slide, idx) => {
                 rect.classList.add("hidden");
               });
         }
+
+        // if (document.querySelector(`#slide-container-${idx + 1}`)) {
+        //   document
+        //     .querySelector(`#slide-container-${idx + 1}`)
+        //     .classList.add("opaque");            
+        // }
 
         d3.select(`.slide-svg-${idx}-y-axis`)
           .transition()

@@ -111,23 +111,20 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("width", x_axisLength / numberOfColumns - 1)
     .attr("height", function(d) {
       return h - yScale(d / 100) - margin.top;
-   })
+    })
     .attr("fill", "red")
     .transition()
     .duration(500);
-  //   .on("mouseover", handleMouseover);
-
-  // const handleMouseover = (d, i) => {
-  //   d3.select(this)
-  //     .transition()
-  //     .ease("exp")
-  //     .duration(500)
-  //     .attr("fill", "white");
-  // };
+    // .on("mouseover", handleMouseover);
 
 
-
-
+    const handleMouseover = (d, i) => {
+      d3.select(this)
+        .transition()
+        .ease("ease")
+        .duration(500)
+        .attr("fill", "white");
+    };
 };
 
 window.addEventListener("load", (e) => {
