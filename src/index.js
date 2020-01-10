@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let thisOneParticularBanana = document.getElementById(
             `flying-banana-${i}`
             );
-            thisOneParticularBanana.style.top = (Math.random() * -200) + "px";
+            thisOneParticularBanana.style.top = (Math.random() * -700) + "px";
             thisOneParticularBanana.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
 
             movementFunc(thisOneParticularBanana);

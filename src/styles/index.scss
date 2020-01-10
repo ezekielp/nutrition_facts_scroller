@@ -64,7 +64,7 @@ body {
     width: 1000px;
     height: 500px;
     background-color: white;
-    margin-left: 75px;
+    margin-left: auto;
     scroll-behavior: smooth;
 }
 
@@ -75,8 +75,9 @@ body {
 
 .slide-svg-container svg {
     position: absolute;
-    margin-left: 50px;
+    margin-left: 25px;
     bottom: -10px;
+    top: 45px;
 }
 
 .y-axis path {
@@ -85,8 +86,9 @@ body {
 
 .slide-container {
     display: flex;
-    height: 500px;
+    height: auto;
     width: 100%;
+    margin-bottom: 125px;
 }
 
 .slide-text-area {
@@ -204,11 +206,10 @@ body {
     fill: #B76120;
 }
 
-.chart-rect:hover {
+/* .chart-rect:hover {
     animation-name: animateColor;
     animation-duration: 0.5s;
-    z-index: 1000;
-}
+} */
 
 @keyframes animateColor {
     from {fill: attr(fill) }
@@ -240,6 +241,9 @@ body {
     position: sticky;
     top: 0px;
     align-self: center;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-right: auto;
 }
 
 .nav-li {
@@ -252,7 +256,7 @@ body {
 }
 
 .nav-li:after {
-    left: 66px;
+    left: 29px;
     position: absolute;
     opacity: 0%;
     width: auto;
