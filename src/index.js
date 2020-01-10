@@ -25,9 +25,13 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
     console.log(nutritionData);
     
     createVisualization(nutritionData[0], 0, true);
-
+    createNavLi(0);
+    createAnchor(0);
+    
     for (let i = 1; i < nutritionData.length; i++) {
-        createVisualization(nutritionData[i], i);
+      createVisualization(nutritionData[i], i);
+      createNavLi(i);
+      createAnchor(i);
     }
 
 });
@@ -60,6 +64,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
   let svg = d3
     .select("#vis")
     .append("svg")
+    .attr("class", `${targetSVG}`)
     .attr("width", w + margin.left + margin.right)
     .attr("height", h + margin.top + margin.bottom);
 
@@ -101,7 +106,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .data(data)
     .enter()
     .append("rect")
-    .attr("class", `${targetSlideRect} hidden chart-rect`)
+    .attr("class", `${targetSlideRect} hidden`)
     .attr("x", function(d, i) {
       return i * (x_axisLength / numberOfColumns) + margin.left + 10;
     })
@@ -210,3 +215,29 @@ const createObservers = (slides) => {
     }
 
 }
+
+const createNavLi = (idx) => {
+  let navColumn = document.querySelector('.nav-column');
+
+  let anchorLink = document.createElement("a");
+  anchorLink.setAttribute("href", `#anchor-${idx}`);
+  navColumn.appendChild(anchorLink);
+
+  let navLi = document.createElement("li");
+  navLi.setAttribute("id", `nav-li-${idx}`);
+  navLi.classList.add("nav-li");
+  anchorLink.appendChild(navLi);
+
+}
+
+const createAnchor = (idx) => {
+  let slideContainer = document.getElementById(`slide-container-${idx}`);
+
+  let anchorTag = document.createElement("a");
+  anchorTag.setAttribute("id", `anchor-${idx}`);
+  anchorTag.classList.add("anchor");
+
+  slideContainer.appendChild(anchorTag);
+}
+
+

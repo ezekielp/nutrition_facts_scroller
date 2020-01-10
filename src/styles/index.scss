@@ -1,3 +1,23 @@
+$banana-color: #FEC800;
+$potato-color: #A7883A;
+$butter-color: #FFE44C;
+$avocado-color: #568203;
+$beef-liver-color: #B71511;
+$cod-liver-color: #E6A888;
+$egg-color: #FFF5C2;
+$herring-color: #E2C1B2;
+$tuna-color: #EF6285;
+$broccoli-color: #84BB4C;
+$peas-color: #3BAD46;
+$pepper-color: #E01200;
+$oyster-color: #D3CFA0;
+$spinach-color: #4D8B00;
+$quinoa-color: #F1D78B;
+$chocolate-color: #663A00;
+$strawberry-color: #DD1334;
+$beans-color: #B76120;
+
+
 body {
     overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
@@ -27,6 +47,11 @@ body {
 
 .svg-immediate-container img {
     width: 200px;
+    height: 200px;
+}
+
+#cod-liver-img {
+    height: auto;
 }
 
 .svg-immediate-container {
@@ -91,47 +116,47 @@ body {
 
 /* Banana */
 .slide-svg-0-rect {
-    fill: #FEC800;
+    fill: $banana-color;
 }
 
 /* Potato */
 .slide-svg-1-rect {
-    fill: #A7883A;
+    fill: $potato-color;
 }
 
 /* Butter */
 .slide-svg-2-rect {
-    fill: #FFE44C;
+    fill: $butter-color;
 }
 
 /* Avocado */
 .slide-svg-3-rect {
-    fill: #568203;
+    fill: $avocado-color;
 }
 
 /* Beef liver */
 .slide-svg-4-rect {
-    fill: #B71511;
+    fill: $beef-liver-color;
 }
 
 /* Cod liver */
 .slide-svg-5-rect {
-    fill: #E6A888;
+    fill: $cod-liver-color;
 }
 
 /* Egg */
 .slide-svg-6-rect {
-    fill: #FFF5C2;
+    fill: $egg-color;
 }
 
 /* Herring */
 .slide-svg-7-rect {
-    fill: #E2C1B2;
+    fill: $herring-color;
 }
 
 /* Tuna */
 .slide-svg-8-rect {
-    fill: #EF6285;
+    fill: $tuna-color;
 }
 
 /* Broccoli */
@@ -182,6 +207,7 @@ body {
 .chart-rect:hover {
     animation-name: animateColor;
     animation-duration: 0.5s;
+    z-index: 1000;
 }
 
 @keyframes animateColor {
@@ -218,40 +244,216 @@ body {
 
 .nav-li {
     list-style: none;
-    height: 10px;
-    width: 10px;
-    background-color: red;
+    height: 18px;
+    width: 18px;
     border-radius: 100%;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
+    border: 1px solid black;
 }
 
-#nav-li-2:after {
-    content: "Butter";
-    left: -10px;
+.nav-li:after {
+    left: 66px;
     position: absolute;
-    top: 34px;
     opacity: 0%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
 }
 
-#nav-li-2:hover:after {
-    opacity: 100%;
+#nav-li-0:hover {
+    background-color: $banana-color;
+}
+
+#nav-li-1:hover {
+    background-color: $potato-color;
+}
+
+#nav-li-2:hover {
+    background-color: $butter-color;
+}
+
+#nav-li-3:hover {
+    background-color: $avocado-color;
+}
+
+#nav-li-4:hover {
+    background-color: $beef-liver-color;
+}
+
+#nav-li-5:hover {
+    background-color: $cod-liver-color;
+}
+
+#nav-li-6:hover {
+    background-color: $egg-color;
+}
+
+#nav-li-7:hover {
+    background-color: $herring-color;
+}
+
+#nav-li-8:hover {
+    background-color: $tuna-color;
+}
+
+#nav-li-9:hover {
+    background-color: $broccoli-color;
+}
+
+#nav-li-10:hover {
+    background-color: $peas-color;
+}
+
+#nav-li-11:hover {
+    background-color: $pepper-color;
+}
+
+#nav-li-12:hover {
+    background-color: $oyster-color;
+}
+
+#nav-li-13:hover {
+    background-color: $spinach-color;
+}
+
+#nav-li-14:hover {
+    background-color: $quinoa-color;
+}
+
+#nav-li-15:hover {
+    background-color: $chocolate-color;
+}
+
+#nav-li-16:hover {
+    background-color: $strawberry-color;
+}
+
+#nav-li-17:hover {
+    background-color: $beans-color;
+}
+
+#nav-li-0:after {
+    content: "Banana";
+    top: -2px;
+    background-color: $banana-color;
 }
 
 #nav-li-1:after {
     content: "Potato";
-    left: -10px;
-    position: absolute;
-    top: 14px;
-    opacity: 0%;
+    top: 26px;
+    background-color: $potato-color;
 }
 
-#nav-li-1:hover:after {
+#nav-li-2:after {
+    content: "Butter";
+    top: 56px;
+    background-color: $butter-color;
+    color: black;
+}
+
+#nav-li-3:after {
+    content: "Avocado";
+    top: 86px;
+    background-color: $avocado-color;
+}
+
+#nav-li-4:after {
+    content: "Beef liver";
+    top: 116px;
+    background-color: $beef-liver-color;
+    width: 63px;
+}
+
+#nav-li-5:after {
+    content: "Cod liver";
+    top: 146px;
+    background-color: $cod-liver-color;
+    width: 59px;
+}
+
+#nav-li-6:after {
+    content: "Egg";
+    top: 175px;
+    background-color: $egg-color;
+    color: black;
+}
+
+#nav-li-7:after {
+    content: "Herring";
+    top: 206px;
+    background-color: $herring-color;
+}
+
+#nav-li-8:after {
+    content: "Tuna";
+    top: 236px;
+    background-color: $tuna-color;
+}
+
+#nav-li-9:after {
+    content: "Broccoli";
+    top: 266px;
+    background-color: $broccoli-color;
+}
+
+#nav-li-10:after {
+    content: "Green peas";
+    top: 296px;
+    background-color: $peas-color;
+    width: 75px;
+}
+
+#nav-li-11:after {
+    content: "Bell pepper";
+    top: 326px;
+    background-color: $pepper-color;
+    width: 77px;
+}
+
+#nav-li-12:after {
+    content: "Oysters";
+    top: 356px;
+    background-color: $oyster-color;
+}
+
+#nav-li-13:after {
+    content: "Spinach";
+    top: 386px;
+    background-color: $spinach-color;
+}
+
+#nav-li-14:after {
+    content: "Quinoa";
+    top: 416px;
+    background-color: $quinoa-color;
+}
+
+#nav-li-15:after {
+    content: "Chocolate";
+    top: 446px;
+    background-color: $chocolate-color;
+}
+
+#nav-li-16:after {
+    content: "Strawberry";
+    top: 476px;
+    background-color: $strawberry-color;
+}
+
+#nav-li-17:after {
+    content: "Beans";
+    top: 506px;
+    background-color: $beans-color;
+}
+
+.nav-li:hover:after {
     opacity: 100%;
 }
 
 .anchor {
     display: block;
     position: relative;
-    top: -100px;
+    top: -75px;
     visibility: hidden;
 }
