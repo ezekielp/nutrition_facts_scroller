@@ -37,7 +37,7 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 });
 
 const createVisualization = (foodData, idx, createXAxisBool) => {
-  let margin = {top: 40, right: 40, bottom: 65, left: 50}
+  let margin = {top: 40, right: 40, bottom: 65, left: 60}
   let w = 700 - margin.left - margin.right;
   let h = 600 - margin.top - margin.bottom;
 
@@ -90,6 +90,16 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     svg.selectAll(".x-axis text").attr("transform", function(d) {
       return "translate(25, 25)rotate(-45)";
     });
+
+    svg
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("class", "y-axis-label")
+      .attr("y", -5)
+      .attr("x", 0 - h / 2)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Percentage of recommended daily allowance(RDA)");
   }
 
   let yAxis = d3.axisLeft(yScale).ticks(4, "%");
