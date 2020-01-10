@@ -13,10 +13,29 @@
     <script src="./dist/main.js"></script>
     <div class="background-container">
         <div id="viewable-area">
-            <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+            <div id="main-header-container">
+                <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+                <ul class="logos-bar">
+                    <li class="logo-li">
+                        <a href="https://github.com/ezekielp" target="_blank">
+                            <img src="./src/styles/github.png" alt="Link to Zeke's Github">
+                        </a>
+                    </li>
+                    <li class="logo-li">
+                        <a href="https://linkedin.com/in/ezekielpfeifer" target="_blank">
+                            <img src="./src/styles/linkedin.png" alt="Link to Zeke's LinkedIn">
+                        </a>
+                    </li>
+                    <li class="logo-li">
+                        <a href="https://angel.co/ezekiel-pfeifer" target="_blank">
+                            <img src="./src/styles/angellist.png" alt="Link to Zeke's AngelList">
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <div class="slide-container" id="slide-container-0">
                 <div class="slide-text-area banana-text-area">
-                    <div id="banana-svg-container" class="svg-immediate-container">
+                    <div id="food-svg-container-0" class="svg-immediate-container">
                         <img src="./src/styles/bananas.svg" alt="banana">
                     </div>
                     <div class="slide-header">Banana</div>
@@ -29,7 +48,7 @@
             </div>
             <div class="slide-container" id="slide-container-1">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div id="food-svg-container-1" class="svg-immediate-container">
                         <img src="./src/styles/potato.svg" alt="potato">
                     </div>
                     <div class="slide-header">Potato</div>
@@ -41,7 +60,7 @@
             </div>
             <div class="slide-container" id="slide-container-2">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-2">
                         <img src="./src/styles/butter.svg" alt="butter">
                     </div>
                     <div class="slide-header">Butter</div>
@@ -53,7 +72,7 @@
             </div>
             <div class="slide-container" id="slide-container-3">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-3">
                         <img src="./src/styles/avocado.svg" alt="avocado">
                     </div>
                     <div class="slide-header">Avocado</div>
@@ -65,7 +84,7 @@
             </div>
             <div class="slide-container" id="slide-container-4">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-4">
                         <img src="./src/styles/liver.svg" alt="beef liver">
                     </div>
                     <div class="slide-header">Beef liver</div>
@@ -78,7 +97,7 @@
             </div>
             <div class="slide-container" id="slide-container-5">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-5">
                         <img src="./src/styles/cod_liver.jpg" id="cod-liver-img" alt="cod liver">
                     </div>
                     <div class="slide-header">Cod liver</div>
@@ -91,7 +110,7 @@
             </div>
             <div class="slide-container" id="slide-container-6">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-6">
                         <img src="./src/styles/egg.svg" alt="egg">
                     </div>
                     <div class="slide-header">Egg</div>
@@ -103,7 +122,7 @@
             </div>
             <div class="slide-container" id="slide-container-7">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-7">
                         <img src="./src/styles/herring.svg" alt="herring">
                     </div>
                     <div class="slide-header">Herring</div>
@@ -115,7 +134,7 @@
             </div>
             <div class="slide-container" id="slide-container-8">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-8">
                         <img src="./src/styles/tuna.svg" alt="tuna">
                     </div>
                     <div class="slide-header">Tuna</div>
@@ -127,7 +146,7 @@
             </div>
             <div class="slide-container" id="slide-container-9">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-9">
                         <img src="./src/styles/broccoli.svg" alt="broccoli">
                     </div>
                     <div class="slide-header">Broccoli</div>
@@ -139,7 +158,7 @@
             </div>
             <div class="slide-container" id="slide-container-10">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-10">
                         <img src="./src/styles/peas.svg" alt="green peas">
                     </div>
                     <div class="slide-header">Green peas</div>
@@ -151,7 +170,7 @@
             </div>
             <div class="slide-container" id="slide-container-11">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-11">
                         <img src="./src/styles/pepper.svg" alt="red bell pepper">
                     </div>
                     <div class="slide-header">Bell pepper</div>
@@ -163,7 +182,7 @@
             </div>
             <div class="slide-container" id="slide-container-12">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-12">
                         <img src="./src/styles/oyster.svg" alt="oyster">
                     </div>
                     <div class="slide-header">Oysters</div>
@@ -175,7 +194,7 @@
             </div>
             <div class="slide-container" id="slide-container-13">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-13">
                         <img src="./src/styles/spinach.svg" alt="spinach">
                     </div>
                     <div class="slide-header">Spinach</div>
@@ -187,7 +206,7 @@
             </div>
             <div class="slide-container" id="slide-container-14">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-14">
                         <img src="./src/styles/quinoa.svg" alt="quinoa">
                     </div>
                     <div class="slide-header">Quinoa</div>
@@ -199,7 +218,7 @@
             </div>
             <div class="slide-container" id="slide-container-15">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-15">
                         <img src="./src/styles/chocolate.svg" alt="chocolate">
                     </div>
                     <div class="slide-header">Dark chocolate</div>
@@ -211,7 +230,7 @@
             </div>
             <div class="slide-container" id="slide-container-16">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-16">
                         <img src="./src/styles/strawberry.svg" alt="strawberry">
                     </div>
                     <div class="slide-header">Strawberry</div>
@@ -223,7 +242,7 @@
             </div>
             <div class="slide-container" id="slide-container-17">
                 <div class="slide-text-area">
-                    <div class="svg-immediate-container">
+                    <div class="svg-immediate-container" id="food-svg-container-17">
                         <img src="./src/styles/beans.svg" alt="beans">
                     </div>
                     <div class="slide-header">Navy beans</div>

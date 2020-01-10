@@ -27,27 +27,177 @@ body {
     display: flex;
 }
 
-#main-header {
+#main-header-container {
     position: sticky;
     top: 0;
     background-color: white;
     padding-top: 15px;
-    padding-bottom: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-.flying-banana {
-    background-image: url('./bananas.svg');
+#main-header-container {
+    display: flex;
+    align-items: center;
+}
+
+#main-header-container ul {
+    display: flex;
     width: 150px;
+    height: 25px;
+    list-style: none;
+    padding: 0;
+    margin-left: 100px;
+}
+
+#main-header-container ul li {
+    width: 25px;
+    margin-right: 30px;
+}
+
+.logo-li a img {
+    height: 100%;
+    width: auto;
+}
+
+
+/* #food-svg-container-0:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid black;
+}
+
+#food-svg-container-0:after {
+    background-color: white;
     height: 150px;
+    width: 150px;
+    border: 5px solid black;
+    content: "Click to have a banana party";
     position: absolute;
     z-index: 100;
+    padding: 20px;
+    border-radius: 40%;
+} */
+
+.flying-food {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    z-index: 100;
+    background-repeat: no-repeat;
+}
+
+.flying-food-0 {
+    background-image: url('./bananas.svg');
+}
+
+.flying-food-1 {
+    background-image: url('./potato.svg');
+}
+
+.flying-food-2 {
+    background-image: url('./butter.svg');
+}
+
+.flying-food-3 {
+    background-image: url('./avocado.svg');
+}
+
+.flying-food-4 {
+    background-image: url('./liver.svg');
+}
+
+#food-svg-container-5 {
+    cursor: default;
+}
+
+.flying-food-6 {
+    background-image: url('./egg.svg');
+}
+
+.flying-food-7 {
+    background-image: url('./herring.svg');
+}
+
+#food-svg-container-8 {
+    cursor: default;
+}
+
+.flying-food-9 {
+    background-image: url('./broccoli.svg');
+}
+
+#food-svg-container-10 {
+    cursor: default;
+}
+
+.flying-food-11 {
+    background-image: url('./pepper.svg');
+}
+
+.flying-food-12 {
+    background-image: url('./oyster.svg');
+}
+
+.flying-food-13 {
+    background-image: url('./spinach.svg');
+}
+
+.flying-food-14 {
+    background-image: url('./quinoa.svg');
+}
+
+#food-svg-container-15 {
+    cursor: default;
+}
+
+.flying-food-16 {
+    background-image: url('./strawberry.svg');
+}
+
+.flying-food-17 {
+    background-image: url('./beans.svg');
 }
 
 .svg-immediate-container img {
     width: 200px;
     height: 200px;
+}
+
+/* .svg-immediate-container:hover .click-me-text {
+    visibility: visible;
+    opacity: 100%;
+}
+ */
+/* .click-me-text {
+    visibility: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0%;
+} */
+
+/* .click-me-text:hover {
+    visibility: visible;
+    opacity: 100%;
+}
+ */
+/* .svg-immediate-container:after {
+    content: "Click me!";
+    background-color: white;
+    position: absolute;
+    visibility: hidden;
+}
+ */
+
+ .svg-immediate-container:hover:after {
+    visibility: visible;
 }
 
 #cod-liver-img {
@@ -56,6 +206,7 @@ body {
 
 .svg-immediate-container {
     text-align: center;
+    cursor: pointer;
 }
 
 #viewable-area {
@@ -76,8 +227,7 @@ body {
 .slide-svg-container svg {
     position: absolute;
     margin-left: 25px;
-    bottom: -10px;
-    top: 45px;
+    top: 70px;
 }
 
 .y-axis path {
@@ -458,7 +608,7 @@ body {
 .anchor {
     display: block;
     position: relative;
-    top: -75px;
+    top: -100px;
     visibility: hidden;
 }
 
