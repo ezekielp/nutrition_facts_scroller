@@ -39,6 +39,13 @@ module.exports = {
             ]
         },
         {
+            test: /\.svg/,
+            use: {
+                loader: 'svg-url-loader',
+                options: {}
+            }
+        },
+        {
             test: /\.scss/,
             use: [{
                 loader: MiniCssExtractPlugin.loader,
