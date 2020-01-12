@@ -403,6 +403,7 @@ body {
     border-radius: 100%;
     margin-bottom: 10px;
     border: 1px solid black;
+    background-color: white;
 }
 
 .nav-li:after {
@@ -415,75 +416,75 @@ body {
     color: white;
 }
 
-#nav-li-0:hover {
+.nav-li-0, #nav-li-0:hover {
     background-color: $banana-color;
 }
 
-#nav-li-1:hover {
+.nav-li-1, #nav-li-1:hover {
     background-color: $potato-color;
 }
 
-#nav-li-2:hover {
+.nav-li-2, #nav-li-2:hover {
     background-color: $butter-color;
 }
 
-#nav-li-3:hover {
+.nav-li-3, #nav-li-3:hover {
     background-color: $avocado-color;
 }
 
-#nav-li-4:hover {
+.nav-li-4, #nav-li-4:hover {
     background-color: $beef-liver-color;
 }
 
-#nav-li-5:hover {
+.nav-li-5, #nav-li-5:hover {
     background-color: $cod-liver-color;
 }
 
-#nav-li-6:hover {
+.nav-li-6, #nav-li-6:hover {
     background-color: $egg-color;
 }
 
-#nav-li-7:hover {
+.nav-li-7, #nav-li-7:hover {
     background-color: $herring-color;
 }
 
-#nav-li-8:hover {
+.nav-li-8, #nav-li-8:hover {
     background-color: $tuna-color;
 }
 
-#nav-li-9:hover {
+.nav-li-9, #nav-li-9:hover {
     background-color: $broccoli-color;
 }
 
-#nav-li-10:hover {
+.nav-li-10, #nav-li-10:hover {
     background-color: $peas-color;
 }
 
-#nav-li-11:hover {
+.nav-li-11, #nav-li-11:hover {
     background-color: $pepper-color;
 }
 
-#nav-li-12:hover {
+.nav-li-12, #nav-li-12:hover {
     background-color: $oyster-color;
 }
 
-#nav-li-13:hover {
+.nav-li-13, #nav-li-13:hover {
     background-color: $spinach-color;
 }
 
-#nav-li-14:hover {
+.nav-li-14, #nav-li-14:hover {
     background-color: $quinoa-color;
 }
 
-#nav-li-15:hover {
+.nav-li-15, #nav-li-15:hover {
     background-color: $chocolate-color;
 }
 
-#nav-li-16:hover {
+.nav-li-16, #nav-li-16:hover {
     background-color: $strawberry-color;
 }
 
-#nav-li-17:hover {
+.nav-li-17, #nav-li-17:hover {
     background-color: $beans-color;
 }
 
@@ -493,115 +494,286 @@ body {
     background-color: $banana-color;
 }
 
+.nav-li-0:after {
+    content: "Banana";
+    top: -2px;
+    background-color: $banana-color;
+    left: 29px;
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
 #nav-li-1:after {
     content: "Potato";
     top: 26px;
     background-color: $potato-color;
 }
 
-#nav-li-2:after {
+.nav-li-1:after {
+    content: "Potato";
+    top: 26px;
+    background-color: $potato-color;
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-2:after, #nav-li-2:after {
     content: "Butter";
     top: 56px;
     background-color: $butter-color;
     color: black;
 }
 
-#nav-li-3:after {
+.nav-li-2:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.nav-li-3:after, #nav-li-3:after {
     content: "Avocado";
     top: 86px;
     background-color: $avocado-color;
 }
 
-#nav-li-4:after {
+.nav-li-3:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-4:after, #nav-li-4:after {
     content: "Beef liver";
     top: 116px;
     background-color: $beef-liver-color;
     width: 63px;
 }
 
-#nav-li-5:after {
+.nav-li-4:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-5:after, #nav-li-5:after {
     content: "Cod liver";
     top: 146px;
     background-color: $cod-liver-color;
     width: 59px;
 }
 
-#nav-li-6:after {
+.nav-li-5:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-6:after, #nav-li-6:after {
     content: "Egg";
     top: 175px;
     background-color: $egg-color;
     color: black;
 }
 
-#nav-li-7:after {
+.nav-li-6:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.nav-li-7:after, #nav-li-7:after {
     content: "Herring";
     top: 206px;
     background-color: $herring-color;
 }
 
-#nav-li-8:after {
+.nav-li-7:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-8:after, #nav-li-8:after {
     content: "Tuna";
     top: 236px;
     background-color: $tuna-color;
 }
 
-#nav-li-9:after {
+.nav-li-8:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-9:after, #nav-li-9:after {
     content: "Broccoli";
     top: 266px;
     background-color: $broccoli-color;
 }
 
-#nav-li-10:after {
+.nav-li-9:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-10:after, #nav-li-10:after {
     content: "Green peas";
     top: 296px;
     background-color: $peas-color;
     width: 75px;
 }
 
-#nav-li-11:after {
+.nav-li-10:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-11:after, #nav-li-11:after {
     content: "Bell pepper";
     top: 326px;
     background-color: $pepper-color;
     width: 77px;
 }
 
-#nav-li-12:after {
+.nav-li-11:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-12:after, #nav-li-12:after {
     content: "Oysters";
     top: 356px;
     background-color: $oyster-color;
 }
 
-#nav-li-13:after {
+.nav-li-12:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-13:after, #nav-li-13:after {
     content: "Spinach";
     top: 386px;
     background-color: $spinach-color;
 }
 
-#nav-li-14:after {
+.nav-li-13:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-14:after, #nav-li-14:after {
     content: "Quinoa";
     top: 416px;
     background-color: $quinoa-color;
 }
 
-#nav-li-15:after {
+.nav-li-14:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-15:after, #nav-li-15:after {
     content: "Chocolate";
     top: 446px;
     background-color: $chocolate-color;
 }
 
-#nav-li-16:after {
+.nav-li-15:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-16:after, #nav-li-16:after {
     content: "Strawberry";
     top: 476px;
     background-color: $strawberry-color;
 }
 
-#nav-li-17:after {
+.nav-li-16:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
+.nav-li-17:after, #nav-li-17:after {
     content: "Beans";
     top: 506px;
     background-color: $beans-color;
 }
 
+.nav-li-17:after {
+    position: absolute;
+    opacity: 100%;
+    width: auto;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+}
+
 .nav-li:hover:after {
+    opacity: 100%;
+}
+
+.nav-li-selected {
     opacity: 100%;
 }
 
