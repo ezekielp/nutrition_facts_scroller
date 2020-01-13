@@ -12,27 +12,27 @@
 <body>
     <script src="./dist/main.js"></script>
     <div class="background-container">
+        <div id="main-header-container">
+            <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+            <ul class="logos-bar">
+                <li class="logo-li">
+                    <a href="https://github.com/ezekielp" target="_blank">
+                        <img src="./src/styles/github.png" alt="Link to Zeke's Github">
+                    </a>
+                </li>
+                <li class="logo-li">
+                    <a href="https://linkedin.com/in/ezekielpfeifer" target="_blank">
+                        <img src="./src/styles/linkedin.png" alt="Link to Zeke's LinkedIn">
+                    </a>
+                </li>
+                <li class="logo-li">
+                    <a href="https://angel.co/ezekiel-pfeifer" target="_blank">
+                        <img src="./src/styles/angellist.png" alt="Link to Zeke's AngelList">
+                    </a>
+                </li>
+            </ul>
+        </div>
         <div id="viewable-area">
-            <div id="main-header-container">
-                <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
-                <ul class="logos-bar">
-                    <li class="logo-li">
-                        <a href="https://github.com/ezekielp" target="_blank">
-                            <img src="./src/styles/github.png" alt="Link to Zeke's Github">
-                        </a>
-                    </li>
-                    <li class="logo-li">
-                        <a href="https://linkedin.com/in/ezekielpfeifer" target="_blank">
-                            <img src="./src/styles/linkedin.png" alt="Link to Zeke's LinkedIn">
-                        </a>
-                    </li>
-                    <li class="logo-li">
-                        <a href="https://angel.co/ezekiel-pfeifer" target="_blank">
-                            <img src="./src/styles/angellist.png" alt="Link to Zeke's AngelList">
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <div class="slide-container" id="slide-container-0">
                 <div class="slide-text-area banana-text-area">
                     <div id="food-svg-container-0" class="svg-immediate-container">
@@ -44,7 +44,6 @@
                     </div>
                     <div class="serving-size-div">Serving size: 1 medium banana (7-8" long)</div>
                 </div>
-                <div class="slide-svg-container" id="vis"></div>
             </div>
             <div class="slide-container" id="slide-container-1">
                 <div class="slide-text-area">
@@ -254,8 +253,14 @@
                 </div>
             </div>
         </div>
-        <ul class="nav-column">
-        </ul>
+        <!-- <div class="slide-svg-container" id="vis"></div> -->
+        <div class="slide-svg-container" >
+            <div id="vis"></div>
+            <div class="nav-column">
+                <ul>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>

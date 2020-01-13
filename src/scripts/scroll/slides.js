@@ -4,8 +4,21 @@ export const renderSlide = (options, slide, idx) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
 
+        document.querySelector(`.slide-svg-${idx}`)
+          .classList.remove("hidden");
+
+        if (document.querySelector(`.slide-svg-${idx - 1}`)) {
+          document.querySelector(`.slide-svg-${idx - 1}`)
+          .classList.add("hidden");
+        }
+
+        if (document.querySelector(`.slide-svg-${idx + 1}`)) {
+          document.querySelector(`.slide-svg-${idx + 1}`)
+          .classList.add("hidden");
+        }
+
         document.querySelectorAll(`.slide-svg-${idx}-rect`).forEach(rect => {
-          rect.classList.remove("hidden");
+          // rect.classList.remove("hidden");
           rect.classList.add("chart-rect");
         });
 
@@ -23,7 +36,7 @@ export const renderSlide = (options, slide, idx) => {
             document
               .querySelectorAll(`.slide-svg-${idx - 1}-rect`)
               .forEach(rect => {
-                rect.classList.add("hidden");
+                // rect.classList.add("hidden");
                 rect.classList.remove("chart-rect");
               });
 
@@ -43,7 +56,7 @@ export const renderSlide = (options, slide, idx) => {
             document
               .querySelectorAll(`.slide-svg-${idx + 1}-rect`)
               .forEach(rect => {
-                rect.classList.add("hidden");
+                // rect.classList.add("hidden");
                 rect.classList.remove("chart-rect");
               });
 

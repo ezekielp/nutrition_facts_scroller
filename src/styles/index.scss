@@ -19,12 +19,13 @@ $beans-color: #B76120;
 
 
 body {
-    overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
 .background-container {
-    display: flex;
+/*     overflow: scroll; */
+    width: 100%;
+    height: auto;
 }
 
 #main-header-container {
@@ -212,22 +213,36 @@ body {
 #viewable-area {
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 1000px;
-    height: 500px;
+    width: 25%;
+    height: 100%;
     background-color: white;
     margin-left: auto;
     scroll-behavior: smooth;
+    display: inline-block;
 }
 
 .slide-svg-container {
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 90vh;
+    position: fixed;
+    display: inline-block;
 }
 
 .slide-svg-container svg {
     position: absolute;
     margin-left: 25px;
-    top: 70px;
+/*     top: 70px; */
+    width: 96%;
+    height: 100%;
+/*     min-height: 600px; */
+/*     position: fixed; */
+}
+
+#vis {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 80%;
 }
 
 .y-axis path {
@@ -356,14 +371,16 @@ body {
     fill: #B76120;
 }
 
-/* .chart-rect:hover {
-    animation-name: animateColor;
-    animation-duration: 0.5s;
-} */
+.chart-rect:hover {
+    opacity: 75%;
+    transition: all 0.5s;
+/*     animation-name: animateColor;
+    animation-duration: 0.5s; */
+}
 
 @keyframes animateColor {
-    from {fill: attr(fill) }
-    to {fill: white}
+    from { opacity: 100%}
+    to { opacity: 75% }
 }
 
 .hidden {
@@ -376,6 +393,7 @@ body {
 }
 
 .chart-rect {
+    transition: all 0.5s;
     animation-duration: 0.5s;
     animation-name: animateHeight;
 }
@@ -388,12 +406,15 @@ body {
 }
 
 .nav-column {
-    position: sticky;
+/*     position: sticky; */
+    position: absolute;
+    display: inline-block;
     top: 0px;
     align-self: center;
     margin-left: 20px;
     padding-left: 0;
     margin-right: auto;
+    width: 20%;
 }
 
 .nav-li {

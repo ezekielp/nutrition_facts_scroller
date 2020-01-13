@@ -40,7 +40,7 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 });
 
 const createVisualization = (foodData, idx, createXAxisBool) => {
-  let margin = {top: 40, right: 40, bottom: 65, left: 60}
+  let margin = {top: 20, right: 40, bottom: 25, left: 60}
   let w = 700 - margin.left - margin.right;
   let h = 600 - margin.top - margin.bottom;
 
@@ -67,9 +67,11 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
   let svg = d3
     .select("#vis")
     .append("svg")
-    .attr("class", `${targetSVG}`)
-    .attr("width", w + margin.left + margin.right)
-    .attr("height", h + margin.top + margin.bottom);
+    .attr("class", `${targetSVG} hidden`)
+    .attr("viewBox", `0 0 ${h + margin.top + margin.bottom} ${w + margin.left + margin.right}`)
+    // .attr("preserveAspectRatio", "xMinYMin meet");
+    // .attr("width", w + margin.left + margin.right)
+    // .attr("height", h + margin.top + margin.bottom);
 
   let xAxis = d3
     .axisBottom(xScale)
@@ -119,7 +121,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .data(data)
     .enter()
     .append("rect")
-    .attr("class", `${targetSlideRect} hidden`)
+    .attr("class", `${targetSlideRect}`)
     .attr("x", function(d, i) {
       return i * (x_axisLength / numberOfColumns) + margin.left + 10;
     })
