@@ -39,7 +39,7 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 const createVisualization = (foodData, idx, createXAxisBool) => {
   let margin = {top: 20, right: 40, bottom: 25, left: 60}
   let w = 700 - margin.left - margin.right;
-  let h = 600 - margin.top - margin.bottom;
+  let h = 675 - margin.top - margin.bottom;
 
   let data = Object.values(foodData).slice(2, -1);
   let numberOfColumns = 10;
