@@ -3,9 +3,6 @@ import * as Slides from './scripts/scroll/slides';
 import addAllFlyingFoodListeners from './scripts/flying_food';
 
 let nutritionData;
-// let foodCounters = {};
-
-// let bananaCounter = 0;
 
 d3.csv("nutrition_facts_for_scroller.csv", d => {
   return {
@@ -164,60 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addAllFlyingFoodListeners();
 
 })
-
-//     document
-//       .getElementById("banana-svg-container")
-//       .addEventListener("click", e => {
-
-//         let bananaIcon = document.getElementById(
-//             "banana-svg-container"
-//         );
-
-//         let bananaChildren = bananaIcon.childNodes;
-//         if (bananaChildren[3]) {
-//             for (let i = 0; i < 20; i++) {
-//                 bananaIcon.removeChild(bananaChildren[3]);
-//             }
-//         }
-
-//         let movementFunc = newBanana => {
-
-//           let start = null;
-
-//           const step = (timestamp) => {
-//             if (!start) start = timestamp;
-//             let progress = timestamp - start;
-//             newBanana.style.transform =
-//               "translateY(" + (progress) + "px)";
-//             if (progress < 5000) {
-//               window.requestAnimationFrame(step);
-//             }
-//           }
-
-//           window.requestAnimationFrame(step);
-
-//         }
-
-//         for (let i = bananaCounter; i < bananaCounter + 20; i++) {
-//             let newBanana = document.createElement("div");
-//             newBanana.setAttribute("id", `flying-banana-${i}`);
-//             newBanana.classList.add(`flying-banana`);
-//             bananaIcon.appendChild(newBanana);
-
-//             let thisOneParticularBanana = document.getElementById(
-//             `flying-banana-${i}`
-//             );
-//             thisOneParticularBanana.style.top = (Math.random() * -700) + "px";
-//             thisOneParticularBanana.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-
-//             movementFunc(thisOneParticularBanana);
-//         }
-
-//         bananaCounter += 10;
-
-//       });
-
-// })
 
 const createObservers = (slides) => {
     
