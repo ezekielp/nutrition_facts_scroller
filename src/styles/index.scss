@@ -23,11 +23,19 @@ body {
 }
 
 .background-container {
-    overflow: scroll;
-    width: 100%;
+    width: auto;
     height: auto;
     padding: 0 50px;
     scroll-behavior: smooth;
+    display: flex;
+    margin: auto;
+/*     min-width: 700px; */
+    max-width: 1200px;
+}
+
+#header-and-nav-container {
+    display: flex;
+    align-items: flex-start;
 }
 
 #main-header-container {
@@ -213,9 +221,9 @@ body {
 }
 
 #viewable-area {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 25%;
+/*     overflow-y: scroll;
+    overflow-x: hidden; */
+    width: 100%;
     height: 100%;
     background-color: white;
     margin-left: auto;
@@ -226,14 +234,15 @@ body {
 }
 
 #new-viewable-area {
-    display: flex;
+/*     display: flex; */
     scroll-behavior: smooth;
+    width: auto;
 }
 
 .slide-svg-container {
-    width: 65%;
+/*     width: 65%;
     height: 74vh;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; */
 /*     position: fixed;
     display: inline-block; */
 }
@@ -258,13 +267,18 @@ body {
     width: 100%;
 }
 
+.new-svg-container-class svg {
+    width: 93%;
+    height: 100%;    
+}
+
 .y-axis path {
     display: none;
 }
 
 .slide-container {
     display: flex;
-    height: auto;
+    height: 600px;
     width: 100%;
     margin-bottom: 125px;
 }
@@ -427,7 +441,8 @@ body {
     margin-left: 20px;
     padding-left: 0;
     margin-right: auto;
-    width: 20%;
+    width: auto;
+    align-self: flex-start;
 }
 
 .nav-li {
