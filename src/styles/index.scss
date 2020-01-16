@@ -26,6 +26,7 @@ body {
 /*     overflow: scroll; */
     width: 100%;
     height: auto;
+    padding: 0 50px;
 }
 
 #main-header-container {
@@ -219,6 +220,8 @@ body {
     margin-left: auto;
     scroll-behavior: smooth;
     display: inline-block;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 .slide-svg-container {
@@ -230,12 +233,8 @@ body {
 
 .slide-svg-container svg {
     position: absolute;
-    margin-left: 25px;
-/*     top: 70px; */
     width: 96%;
     height: 100%;
-/*     min-height: 600px; */
-/*     position: fixed; */
 }
 
 #vis {
