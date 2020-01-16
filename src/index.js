@@ -38,8 +38,8 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 
 const createVisualization = (foodData, idx, createXAxisBool) => {
   let margin = {top: 20, right: 40, bottom: 25, left: 60}
-  let w = 700 - margin.left - margin.right;
-  let h = 675 - margin.top - margin.bottom;
+  let w = 600 - margin.left - margin.right;
+  let h = 475 - margin.top - margin.bottom;
 
   let data = Object.values(foodData).slice(2, -1);
   let numberOfColumns = 10;
@@ -66,8 +66,8 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .select(`#svg-container-${idx}`)
     .append("svg")
     .attr("class", `${targetSVG} hidden`)
-    .attr("viewBox", `0 0 ${h + margin.top + margin.bottom} ${w + margin.left + margin.right}`)
-    // .attr("preserveAspectRatio", "xMinYMin meet");
+    .attr("viewBox", `0 0 575 675`)
+    .attr("preserveAspectRatio", "xMinYMin meet");
     // .attr("width", w + margin.left + margin.right)
     // .attr("height", h + margin.top + margin.bottom);
 
@@ -91,7 +91,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       .call(xAxis);
 
     svg.selectAll(".x-axis text").attr("transform", function(d) {
-      return "translate(25, 25)rotate(-45)";
+      return "translate(10, 25)rotate(-45)";
     });
 
     svg

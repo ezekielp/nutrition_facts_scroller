@@ -28,7 +28,7 @@ body {
 }
 
 .background-container {
-    width: auto;
+    width: 90%;
     height: auto;
     padding: 0 50px;
     scroll-behavior: smooth;
@@ -237,7 +237,7 @@ body {
 }
 
 #new-viewable-area {
-    width: auto;
+    width: 90%;
     padding-left: 75px;
 }
 
@@ -255,12 +255,14 @@ body {
 
 .new-svg-container-class {
     height: 100%;
-    width: 100%;
+    width: 75%;
 }
 
 .new-svg-container-class svg {
-    width: 100%;
-    height: 100%;    
+/*     width: 100%;
+    height: 100%; */
+    width: 49vw;
+    height: 115vh;
 }
 
 .y-axis path {
@@ -276,11 +278,12 @@ body {
 }
 
 .slide-text-area {
-    width: 292.5px;
-    height: auto;
+    width: 25%;
+    height: 600px;
     font-size: 30px;
     box-sizing: border-box;
     transition: all 0.5s;
+    margin-right: 25px;
 }
 
 .banana-text-area {
