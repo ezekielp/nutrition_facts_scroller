@@ -78,7 +78,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       return Object.keys(foodData).slice(2, -1)[d];
     });
 
-  if (createXAxisBool !== undefined) {
+  // if (createXAxisBool !== undefined) {
     svg
       .append("g")
       .attr("class", `${targetSVG}-x-axis x-axis`)
@@ -98,12 +98,12 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       .append("text")
       .attr("transform", "rotate(-90)")
       .attr("class", "y-axis-label")
-      .attr("y", -5)
+      .attr("y", 0)
       .attr("x", 0 - h / 2)
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Percentage of recommended daily allowance(RDA)");
-  }
+  // }
 
   let yAxis = d3.axisLeft(yScale).ticks(4, "%");
 

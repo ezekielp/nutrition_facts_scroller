@@ -27,6 +27,40 @@ body {
     margin-top: 0;
 }
 
+.byline {
+    position: fixed;
+/*     transform: translate(-73px, 85px) rotate(-90deg); */
+    transform: translate(-20px, 24px) rotate(-90deg);
+    transition: 1s all;
+    height: 125px;
+    z-index: 1000;
+/*     animation: 3s ease-in-out spinback; */
+}
+
+.byline:hover {
+/*     animation: 2s ease-in-out spin; */
+    transform: translate(0px, 0px) rotate(0deg);
+    transform: rotateY(360deg);
+/*     transform: translate(-20px, 24px) rotate(-90deg); */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+        transform: translate(-20px, 24px) rotate(-90deg);
+    }
+    
+    50% {
+        transform: translate(-20px, 24px) rotate(-90deg);
+        transform: rotateY(180deg);
+    }
+    
+    100% {
+        transform: translate(-20px, 24px) rotate(-90deg);
+        transform: rotateY(360deg);
+    }
+}
+
 .background-container {
     width: 90%;
     height: auto;
