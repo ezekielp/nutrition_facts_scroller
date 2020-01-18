@@ -83,11 +83,9 @@ export const renderSlide = (options, slide, idx) => {
         }
 
         if (document.querySelectorAll(`.slide-svg-${idx + 1}-rect`)) {
-            // debugger;
             document
               .querySelectorAll(`.slide-svg-${idx + 1}-rect`)
               .forEach(rect => {
-                // rect.classList.add("hidden");
                 rect.classList.remove("chart-rect");
               });
 
