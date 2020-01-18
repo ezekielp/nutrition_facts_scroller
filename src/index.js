@@ -66,7 +66,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .select(`#svg-container-${idx}`)
     .append("svg")
     .attr("class", `${targetSVG} hidden`)
-    .attr("viewBox", `0 0 575 675`)
+    .attr("viewBox", `0 0 650 700`)
     .attr("preserveAspectRatio", "xMinYMin meet");
     // .attr("width", w + margin.left + margin.right)
     // .attr("height", h + margin.top + margin.bottom);
@@ -103,6 +103,16 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Percentage of recommended daily allowance(RDA)");
+
+    svg
+      .append("text")
+      .attr("class", "source-text")
+      .attr("transform",
+        "translate(35, " +
+        (h + margin.top + 40) + ")")
+      // .attr("dy", "1em")
+      .style("text-anchor", "left")
+      .text("Source: USDA");
   // }
 
   let yAxis = d3.axisLeft(yScale).ticks(4, "%");
@@ -113,7 +123,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("transform", "translate(" + margin.left + ",0)")
     .style("opacity", "0%")
     .call(yAxis);
-
+        
   svg
     .selectAll("rect")
     .data(data)
@@ -130,19 +140,9 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("height", function(d) {
       return h - yScale(d / 100) - margin.top;
     })
-    .attr("fill", "red")
     .transition()
     .duration(500);
-    // .on("mouseover", handleMouseover);
 
-
-    const handleMouseover = (d, i) => {
-      d3.select(this)
-        .transition()
-        .ease("ease")
-        .duration(500)
-        .attr("fill", "white");
-    };
 };
 
 window.addEventListener("load", (e) => {
