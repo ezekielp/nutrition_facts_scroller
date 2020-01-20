@@ -161,6 +161,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addAllFlyingFoodListeners();
 
+    document.getElementById('food-svg-container-0').addEventListener("mouseover", () => {
+
+      document.querySelector('.click-bubble').classList.add("show");
+    })
+
+    document.getElementById('food-svg-container-0').addEventListener("mouseout", () => {
+
+      document.querySelector('.click-bubble').classList.remove("show");
+    })
+
 })
 
 const createObservers = (slides) => {

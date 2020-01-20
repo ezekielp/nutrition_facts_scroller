@@ -153,6 +153,35 @@ body {
     border-radius: 40%;
 } */
 
+.food-stuff-container {
+    display: flex;
+}
+
+.click-bubble {
+    opacity: 0%;
+}
+
+.show {
+    opacity: 100%;
+}
+
+.click-bubble img {
+    height: 220px;
+    width: auto;
+    z-index: 1000;
+    position: absolute;
+    transform: rotate(21deg);    
+}
+
+.click-bubble-text {
+    margin-top: 74px;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    width: 200px;
+    margin-left: 64px;
+}
+
 .flying-food {
     width: 150px;
     height: 200px;
