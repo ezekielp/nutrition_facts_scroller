@@ -161,25 +161,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addAllFlyingFoodListeners();
 
-    document.getElementById('food-svg-container-0').addEventListener("mouseover", () => {
+    const flyingFoodIds = [0, 1, 2, 3, 4, 6, 7, 9, 11, 12, 13, 14, 16, 17];
 
-      document.querySelector('.click-bubble').classList.add("show");
+    flyingFoodIds.forEach(id => {
+      document.getElementById(`food-svg-container-${id}`).addEventListener("mouseover", () => {
+        document.getElementById(`click-bubble-${id}`).classList.add("show");
+      })
+
+      document.getElementById(`food-svg-container-${id}`).addEventListener("mouseout", () => {
+        document.getElementById(`click-bubble-${id}`).classList.remove("show");
+      })
+
     })
 
-    document.getElementById('food-svg-container-0').addEventListener("mouseout", () => {
 
-      document.querySelector('.click-bubble').classList.remove("show");
-    })
+    // document.getElementById('food-svg-container-0').addEventListener("mouseout", () => {
 
-    document.getElementById('food-svg-container-1').addEventListener("mouseover", () => {
+    //   document.querySelector('.click-bubble').classList.remove("show");
+    // })
 
-      document.querySelector('#potato-party').classList.add("show");
-    })
+    // document.getElementById('food-svg-container-1').addEventListener("mouseover", () => {
 
-    document.getElementById('food-svg-container-1').addEventListener("mouseout", () => {
+    //   document.querySelector('#click-bubble-1').classList.add("show");
+    // })
 
-      document.querySelector('#potato-party').classList.remove("show");
-    })
+    // document.getElementById('food-svg-container-1').addEventListener("mouseout", () => {
+
+    //   document.querySelector('#click-bubble-1').classList.remove("show");
+    // })
 
 })
 
