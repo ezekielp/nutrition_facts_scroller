@@ -36,7 +36,6 @@ module.exports = {
               hmr: process.env.NODE_ENV === "development"
             }
           },
-          "resolve-url-loader",
           "css-loader",
           "postcss-loader"
         ]
@@ -60,16 +59,15 @@ module.exports = {
               hmr: process.env.NODE_ENV === "development"
             }
           },
-          "resolve-url-loader",
           "css-loader",
           "sass-loader",
           "postcss-loader"
         ]
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
-      }
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: ["file-loader"],
+      // }
     ]
   },
   plugins: [

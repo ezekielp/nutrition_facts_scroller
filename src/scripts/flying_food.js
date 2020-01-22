@@ -24,7 +24,7 @@
                     if (!start) start = timestamp;
                     let progress = timestamp - start;
                     newFood.style.transform = "translate(" + (progress * randomlySignedOne) + "px, " + progress + "px)";
-                    if (progress < 1500) {
+                    if (progress < 2500) {
                     window.requestAnimationFrame(step);
                     }
                 };
@@ -42,7 +42,7 @@
                 let thisOneParticularFood = document.getElementById(
                     `flying-food-of-type-${idx}-${i}`
                 );
-                thisOneParticularFood.style.top = Math.random() * -700 + "px";
+                thisOneParticularFood.style.top = Math.random() * window.scrollY + "px";
                 thisOneParticularFood.style.left =
                     Math.floor(Math.random() * window.innerWidth) + "px";
 

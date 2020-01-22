@@ -171,6 +171,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector('.click-bubble').classList.remove("show");
     })
 
+    document.getElementById('food-svg-container-1').addEventListener("mouseover", () => {
+
+      document.querySelector('#potato-party').classList.add("show");
+    })
+
+    document.getElementById('food-svg-container-1').addEventListener("mouseout", () => {
+
+      document.querySelector('#potato-party').classList.remove("show");
+    })
+
 })
 
 const createObservers = (slides) => {

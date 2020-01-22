@@ -159,6 +159,7 @@ body {
 
 .click-bubble {
     opacity: 0%;
+    margin-top: 60px;
 }
 
 .show {
@@ -166,7 +167,7 @@ body {
 }
 
 .click-bubble img {
-    height: 220px;
+    height: 75px;
     width: auto;
     z-index: 1000;
     position: absolute;
@@ -174,12 +175,13 @@ body {
 }
 
 .click-bubble-text {
-    margin-top: 74px;
+    margin-top: 23px;
     text-align: center;
     z-index: 1000;
     position: absolute;
-    width: 200px;
-    margin-left: 64px;
+    width: 60px;
+    margin-left: 26px;
+    font-size: 11px;
 }
 
 .flying-food {

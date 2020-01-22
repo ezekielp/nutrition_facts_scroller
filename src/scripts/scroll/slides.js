@@ -4,6 +4,8 @@ export const renderSlide = (options, slide, idx) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
 
+        console.log(window.scrollY);
+
         document.querySelector(`.slide-svg-${idx}`)
           .classList.remove("hidden");
 
