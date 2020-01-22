@@ -366,9 +366,11 @@ body {
 
 #vis {
     display: inline-block;
-    position: relative;
+    position: fixed;
     height: 100%;
-    width: 80%;
+/*     width: 80%; */
+    align-self: flex-start;
+    margin-left: 20vw;
 }
 
 .new-svg-container-class {
@@ -402,6 +404,7 @@ body {
     box-sizing: border-box;
     transition: all 0.5s;
     margin-right: 25px;
+    overflow: scroll;
 }
 
 .banana-text-area {

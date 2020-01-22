@@ -62,8 +62,8 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .range([h - margin.top, margin.bottom]);
 
   let svg = d3
-    // .select("#vis")
-    .select(`#svg-container-${idx}`)
+    .select("#vis")
+    // .select(`#svg-container-${idx}`)
     .append("svg")
     .attr("class", `${targetSVG} hidden`)
     .attr("viewBox", `0 0 650 700`)
