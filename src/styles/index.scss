@@ -124,6 +124,25 @@ body {
 .logo-li a img {
     height: 100%;
     width: auto;
+    transition: all 1s;
+}
+
+.logo-li a img:hover {
+    animation: flip-icon 2s ease-in-out infinite;
+}
+
+@keyframes flip-icon {
+    0% {
+        transform: rotateY(0deg)
+    }
+
+    50% {
+        transform: rotateY(180deg)
+    }
+
+    100% {
+        transform: rotateY(360deg)
+    }
 }
 
 .food-stuff-container {
