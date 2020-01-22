@@ -7,11 +7,13 @@
 
             foodIcon.addEventListener("click", e => {
                 let foodChildren = foodIcon.childNodes;
-                if (foodChildren[3]) {
-                for (let i = 0; i < 30; i++) {
-                    foodIcon.removeChild(foodChildren[3]);
-                }
-                }
+                window.setTimeout(() => {
+                    if (foodChildren[3]) {
+                        for (let i = 0; i < 30; i++) {
+                            foodIcon.removeChild(foodChildren[3]);
+                        }
+                    }
+                }, 3000);
 
                 let movementFunc = newFood => {
                 let start = null;
@@ -57,6 +59,8 @@
             foodCounters[i] = 0;
             addFlyingFoodListener(i);
         }
+
+
 
     }
 
