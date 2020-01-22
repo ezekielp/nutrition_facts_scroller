@@ -2,14 +2,19 @@
 
 ### Table of contents
 1. [Background and overview](#background)
-2. [Functionality & MVP](#functionality)
-3. [Wireframes](#wireframes)
-4. [Architecture and technologies](#technologies)
+2. [Project link](#demo)
+3. [Functionality & MVP](#functionality)
+4. [Wireframes](#wireframes)
+5. [Architecture and technologies](#technologies)
 
 
 ## <a name="background"></a> Background and overview
 
 Brain Food is a scroller with data visualizations about nutrition facts of staple foods. It emphasizes lesser-known facts about well-known food items (and a few that are often neglected). The scroller format and hover effects on the visualizations provide interactivity, and the order of the visualizations serves to compare and contrast the properties of various foods.
+
+## <a name="demo"></a> Project link
+
+Here is a link to the live project: http://ezekielp.com/nutrition_facts_scroller/
 
 ## <a name="functionality"></a> Functionality & MVP
 

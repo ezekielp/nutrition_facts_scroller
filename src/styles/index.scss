@@ -30,19 +30,15 @@ body {
 
 .byline {
     position: fixed;
-/*     transform: translate(-73px, 85px) rotate(-90deg); */
     transform: translate(-20px, 24px) rotate(-90deg);
     transition: 1s all;
     height: 125px;
     z-index: 1000;
-/*     animation: 3s ease-in-out spinback; */
 }
 
 .byline:hover {
-/*     animation: 2s ease-in-out spin; */
     transform: translate(0px, 0px) rotate(0deg);
     transform: rotateY(360deg);
-/*     transform: translate(-20px, 24px) rotate(-90deg); */
 }
 
 @keyframes spin {
@@ -84,7 +80,6 @@ body {
     scroll-behavior: smooth;
     display: flex;
     margin: auto;
-/*     min-width: 700px; */
     max-width: 1200px;
     box-sizing: border-box;
 }
@@ -130,29 +125,6 @@ body {
     height: 100%;
     width: auto;
 }
-
-
-/* #food-svg-container-0:before {
-    content: "";
-    width: 0px;
-    height: 0px;
-    border-left: 20px solid transparent;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid black;
-}
-
-#food-svg-container-0:after {
-    background-color: white;
-    height: 150px;
-    width: 150px;
-    border: 5px solid black;
-    content: "Click to have a banana party";
-    position: absolute;
-    z-index: 100;
-    padding: 20px;
-    border-radius: 40%;
-} */
 
 .food-stuff-container {
     display: flex;
@@ -302,34 +274,6 @@ body {
     width: 200px;
     height: 200px;
 }
-
-/* .svg-immediate-container:hover .click-me-text {
-    visibility: visible;
-    opacity: 100%;
-}
- */
-/* .click-me-text {
-    visibility: hidden;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    opacity: 0%;
-} */
-
-/* .click-me-text:hover {
-    visibility: visible;
-    opacity: 100%;
-}
- */
-/* .svg-immediate-container:after {
-    content: "Click me!";
-    background-color: white;
-    position: absolute;
-    visibility: hidden;
-}
- */
 
  .svg-immediate-container:hover:after {
     visibility: visible;
