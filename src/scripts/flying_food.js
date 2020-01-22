@@ -7,11 +7,13 @@
 
             foodIcon.addEventListener("click", e => {
                 let foodChildren = foodIcon.childNodes;
-                if (foodChildren[3]) {
-                for (let i = 0; i < 30; i++) {
-                    foodIcon.removeChild(foodChildren[3]);
-                }
-                }
+                window.setTimeout(() => {
+                    if (foodChildren[3]) {
+                        for (let i = 0; i < 30; i++) {
+                            foodIcon.removeChild(foodChildren[3]);
+                        }
+                    }
+                }, 3000);
 
                 let movementFunc = newFood => {
                 let start = null;
@@ -24,7 +26,7 @@
                     if (!start) start = timestamp;
                     let progress = timestamp - start;
                     newFood.style.transform = "translate(" + (progress * randomlySignedOne) + "px, " + progress + "px)";
-                    if (progress < 1500) {
+                    if (progress < 2500) {
                     window.requestAnimationFrame(step);
                     }
                 };
@@ -42,7 +44,7 @@
                 let thisOneParticularFood = document.getElementById(
                     `flying-food-of-type-${idx}-${i}`
                 );
-                thisOneParticularFood.style.top = Math.random() * -700 + "px";
+                thisOneParticularFood.style.top = (Math.random() * -300) + window.scrollY + "px";
                 thisOneParticularFood.style.left =
                     Math.floor(Math.random() * window.innerWidth) + "px";
 
@@ -57,6 +59,8 @@
             foodCounters[i] = 0;
             addFlyingFoodListener(i);
         }
+
+
 
     }
 

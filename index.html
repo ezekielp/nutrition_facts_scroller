@@ -8,13 +8,18 @@
     <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./dist/main.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="icon" href="./src/styles/avocado-favicon.png" type="image/png" />
 </head>
 <body>
     <script src="./dist/main.js"></script>
+    <!-- <div class="byline">Created by Ezekiel Pfeifer</div> -->
     <div class="background-container">
-        <div id="viewable-area">
+        <div id="new-viewable-area">
             <div id="main-header-container">
-                <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+                <div id="header-sub-container">
+                    <h1 id="main-header">Brain Food: A Scroller About Some Nutritious Fare</h1>
+                    <div id="new-byline">By <a target="_blank" href="https://ezekielp.github.io">Ezekiel Pfeifer</a></div>
+                </div>
                 <ul class="logos-bar">
                     <li class="logo-li">
                         <a href="https://github.com/ezekielp" target="_blank">
@@ -33,224 +38,332 @@
                     </li>
                 </ul>
             </div>
-            <div class="slide-container" id="slide-container-0">
-                <div class="slide-text-area banana-text-area">
-                    <div id="food-svg-container-0" class="svg-immediate-container">
-                        <img src="./src/styles/bananas.svg" alt="banana">
+            <div id="viewable-area">
+                <div class="slide-container" id="slide-container-0">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div id="food-svg-container-0" class="svg-immediate-container">
+                                <img src="./src/styles/bananas.svg" alt="banana">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-0">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Banana</div>
+                        <div class="slide-body-text">
+                            Let’s start with a ripe yellow banana. A very healthy food, right? Lots of potassium! But scroll down to find out which humdrum food has twice as much of the essential electrolyte bananas are famous for.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 medium banana (7-8" long)</div>
                     </div>
-                    <div class="slide-header">Banana</div>
-                    <div class="slide-body-text">
-                        Let’s start with a ripe yellow banana. A very healthy food, right? Lots of potassium! But scroll down to find out which humdrum food has twice as much of the essential electrolyte bananas are famous for.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 medium banana (7-8" long)</div>
+                    <div class="new-svg-container-class" id="vis"></div>
+                    <!-- <div class="new-svg-container-class" id="svg-container-0"></div> -->
                 </div>
-                <div class="slide-svg-container" id="vis"></div>
-            </div>
-            <div class="slide-container" id="slide-container-1">
-                <div class="slide-text-area">
-                    <div id="food-svg-container-1" class="svg-immediate-container">
-                        <img src="./src/styles/potato.svg" alt="potato">
+                <div class="slide-container" id="slide-container-1">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div id="food-svg-container-1" class="svg-immediate-container">
+                                <img src="./src/styles/potato.svg" alt="potato">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-1">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Potato</div>
+                        <div class="slide-body-text">
+                            That's right, the humble potato! Potatoes are one of the richest food sources of potassium, which is important for muscle contraction and helps regulate fluid balance in the body. They also have a significant amount of vitamin C, folate, and magnesium.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 medium potato (2.25-3.25" diameter)</div>
                     </div>
-                    <div class="slide-header">Potato</div>
-                    <div class="slide-body-text">
-                        That's right, the humble potato! Potatoes are one of the richest food sources of potassium, which is important for muscle contraction and helps regulate fluid balance in the body. They also have a significant amount of vitamin C, folate, and magnesium.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 medium potato (2.25-3.25" diameter)</div>
+                    <div class="new-svg-container-class" id="svg-container-1"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-2">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-2">
-                        <img src="./src/styles/butter.svg" alt="butter">
+                <div class="slide-container" id="slide-container-2">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-2">
+                                <img src="./src/styles/butter.svg" alt="butter">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-2">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>                            
+                        </div>
+                        <div class="slide-header">Butter</div>
+                        <div class="slide-body-text">
+                            (Just make sure to eat your potato with some butter or other fat. It helps slow down digestion of the starch and improve your body's absorption of the potato's nutrients. It also tastes good.)
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 tablespoon</div>
                     </div>
-                    <div class="slide-header">Butter</div>
-                    <div class="slide-body-text">
-                        (Just make sure to eat your potato with some butter or other fat. It helps slow down digestion of the starch and improve your body's absorption of the potato's nutrients. It also tastes good.)
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 tablespoon</div>
+                    <div class="new-svg-container-class" id="svg-container-2"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-3">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-3">
-                        <img src="./src/styles/avocado.svg" alt="avocado">
+                <div class="slide-container" id="slide-container-3">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-3">
+                                <img src="./src/styles/avocado.svg" alt="avocado">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-3">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>                        
+                        <div class="slide-header">Avocado</div>
+                        <div class="slide-body-text">
+                            Speaking of potassium, avocados are another excellent source of the electrolyte, along with other nutrients, especially folate, which works with vitamin B12 in the production of red blood cells.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 medium avocado</div>
                     </div>
-                    <div class="slide-header">Avocado</div>
-                    <div class="slide-body-text">
-                        Speaking of potassium, avocados are another excellent source of the electrolyte, along with other nutrients, especially folate, which works with vitamin B12 in the production of red blood cells.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 medium avocado</div>
+                    <div class="new-svg-container-class" id="svg-container-3"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-4">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-4">
-                        <img src="./src/styles/liver.svg" alt="beef liver">
+                <div class="slide-container" id="slide-container-4">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-4">
+                                <img src="./src/styles/liver.svg" alt="beef liver">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-4">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Beef liver</div>
+                        <div class="slide-body-text">
+                            Let’s get some protein to go with all this potassium. How about some liver? No, seriously — it’s a wonder food: one
+                            of the richest sources of vitamin A and vitamin B12, key nutrients for your bones, skin and brain.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 slice (81 g)</div>
                     </div>
-                    <div class="slide-header">Beef liver</div>
-                    <div class="slide-body-text">
-                        Let’s get some protein to go with all this potassium. How about some liver? No, seriously — it’s a wonder food: one
-                        of the richest sources of vitamin A and vitamin B12, key nutrients for your bones, skin and brain.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 slice (81 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-4"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-5">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-5">
-                        <img src="./src/styles/cod_liver.jpg" id="cod-liver-img" alt="cod liver">
+                <div class="slide-container" id="slide-container-5">
+                    <div class="slide-text-area">
+                        <div class="svg-immediate-container" id="food-svg-container-5">
+                            <img src="./src/styles/cod_liver.jpg" id="cod-liver-img" alt="cod liver">
+                        </div>
+                        <div class="slide-header">Cod liver</div>
+                        <div class="slide-body-text">
+                            Prefer seafood? Try cod liver instead (in a salad with boiled eggs and onion, for instance). It too has a significant
+                            helping of vitamin A along with vitamin D, which promotes absorption of calcium in the gut.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1.7 oz (50 g)</div>
                     </div>
-                    <div class="slide-header">Cod liver</div>
-                    <div class="slide-body-text">
-                        Prefer seafood? Try cod liver instead (in a salad with boiled eggs and onion, for instance). It too has a significant
-                        helping of vitamin A along with vitamin D, which promotes absorption of calcium in the gut.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1.7 oz (50 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-5"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-6">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-6">
-                        <img src="./src/styles/egg.svg" alt="egg">
+                <div class="slide-container" id="slide-container-6">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-6">
+                                <img src="./src/styles/egg.svg" alt="egg">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-6">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Egg</div>
+                        <div class="slide-body-text">
+                            The egg to go with your cod liver is also a truly wondrous food, high in vitamin B12, vitamin A, folate, and cholesterol (a misunderstood nutrient critical for brain function).
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 large (50 g)</div>
                     </div>
-                    <div class="slide-header">Egg</div>
-                    <div class="slide-body-text">
-                        The egg to go with your cod liver is also a truly wondrous food, high in vitamin B12, vitamin A, folate, and cholesterol (a misunderstood nutrient critical for brain function).
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 large (50 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-6"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-7">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-7">
-                        <img src="./src/styles/herring.svg" alt="herring">
+                <div class="slide-container" id="slide-container-7">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-7">
+                                <img src="./src/styles/herring.svg" alt="herring">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-7">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Herring</div>
+                        <div class="slide-body-text">
+                            If you want to stock up on beneficial omega-3 fatty acids as well as B12, try some herring. This fish, often neglected in the US, is full of nutrients, and delicious fishy flavor (an acquired taste, to be sure).
+                        </div>
+                        <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
                     </div>
-                    <div class="slide-header">Herring</div>
-                    <div class="slide-body-text">
-                        If you want to stock up on beneficial omega-3 fatty acids as well as B12, try some herring. This fish, often neglected in the US, is full of nutrients, and delicious fishy flavor (an acquired taste, to be sure).
-                    </div>
-                    <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-7"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-8">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-8">
-                        <img src="./src/styles/tuna.svg" alt="tuna">
+                <div class="slide-container" id="slide-container-8">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-8">
+                                <img src="./src/styles/tuna.svg" alt="tuna">
+                            </div>
+                        </div>
+                        <div class="slide-header">Tuna</div>
+                        <div class="slide-body-text">
+                            Herring, for instance, is superior nutritionally in many ways to the more popular tuna.
+                        </div>
+                        <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
                     </div>
-                    <div class="slide-header">Tuna</div>
-                    <div class="slide-body-text">
-                        Herring, for instance, is superior nutritionally in many ways to the more popular tuna.
-                    </div>
-                    <div class="serving-size-div">Serving size: 3 oz (85 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-8"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-9">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-9">
-                        <img src="./src/styles/broccoli.svg" alt="broccoli">
+                <div class="slide-container" id="slide-container-9">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-9">
+                                <img src="./src/styles/broccoli.svg" alt="broccoli">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-9">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Broccoli</div>
+                        <div class="slide-body-text">
+                            Let's add some veggies to the mix. As your mother likely told you, eat your broccoli — it has a fantastic nutritional profile, high in folate, potassium, fiber, and, perhaps surprisingly, vitamin C. 
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 cup (156 g)</div>
                     </div>
-                    <div class="slide-header">Broccoli</div>
-                    <div class="slide-body-text">
-                        Let's add some veggies to the mix. As your mother likely told you, eat your broccoli — it has a fantastic nutritional profile, high in folate, potassium, fiber, and, perhaps surprisingly, vitamin C. 
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 cup (156 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-9"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-10">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-10">
-                        <img src="./src/styles/peas.svg" alt="green peas">
+                <div class="slide-container" id="slide-container-10">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-10">
+                                <img src="./src/styles/peas.svg" alt="green peas">
+                            </div>
+                        </div>
+                        <div class="slide-header">Green peas</div>
+                        <div class="slide-body-text">
+                            Peas have gone out of style but are another excellent food, high in many of the same nutrients as broccoli but also packing significant protein.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 cup (160 g)</div>
                     </div>
-                    <div class="slide-header">Green peas</div>
-                    <div class="slide-body-text">
-                        Peas have gone out of style but are another excellent food, high in many of the same nutrients as broccoli but also packing significant protein.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 cup (160 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-10"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-11">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-11">
-                        <img src="./src/styles/pepper.svg" alt="red bell pepper">
+                <div class="slide-container" id="slide-container-11">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-11">
+                                <img src="./src/styles/pepper.svg" alt="red bell pepper">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-11">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Bell pepper</div>
+                        <div class="slide-body-text">
+                            Feeling a cold coming on? You could eat an orange for vitamin C — or a bell pepper. Just half a pepper has roughly the same amount of the nutrient as an orange.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1/2 medium pepper (59.5 g)</div>
                     </div>
-                    <div class="slide-header">Bell pepper</div>
-                    <div class="slide-body-text">
-                        Feeling a cold coming on? You could eat an orange for vitamin C — or a bell pepper. Just half a pepper has roughly the same amount of the nutrient as an orange.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1/2 medium pepper (59.5 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-11"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-12">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-12">
-                        <img src="./src/styles/oyster.svg" alt="oyster">
+                <div class="slide-container" id="slide-container-12">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-12">
+                                <img src="./src/styles/oyster.svg" alt="oyster">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-12">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Oysters</div>
+                        <div class="slide-body-text">
+                            Another food you may want to eat when sick is ... oysters! The bivalve is absolutely brimming with zinc, with 6 oysters containing a whopping 347% of your recommended daily allowance, along with significant B12 and vitamin D.
+                        </div>
+                        <div class="serving-size-div">Serving size: 6 medium oysters (84 g)</div>
                     </div>
-                    <div class="slide-header">Oysters</div>
-                    <div class="slide-body-text">
-                        Another food you may want to eat when sick is ... oysters! The bivalve is absolutely brimming with zinc, with 6 oysters containing a whopping 347% of your recommended daily allowance, along with significant B12 and vitamin D.
-                    </div>
-                    <div class="serving-size-div">Serving size: 6 medium oysters (84 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-12"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-13">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-13">
-                        <img src="./src/styles/spinach.svg" alt="spinach">
+                <div class="slide-container" id="slide-container-13">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-13">
+                                <img src="./src/styles/spinach.svg" alt="spinach">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-13">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Spinach</div>
+                        <div class="slide-body-text">
+                            So far the foods we've seen haven't had as much magnesium as the body needs. For this, you can snack on some spinach, another extremely nutritious food. Just add some olive oil and garlic for flavor.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1/4 cup cooked (45 g)</div>
                     </div>
-                    <div class="slide-header">Spinach</div>
-                    <div class="slide-body-text">
-                        So far the foods we've seen haven't had as much magnesium as the body needs. For this, you can snack on some spinach, another extremely nutritious food. Just add some olive oil and garlic for flavor.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1/4 cup cooked (45 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-13"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-14">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-14">
-                        <img src="./src/styles/quinoa.svg" alt="quinoa">
+                <div class="slide-container" id="slide-container-14">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-14">
+                                <img src="./src/styles/quinoa.svg" alt="quinoa">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-14">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Quinoa</div>
+                        <div class="slide-body-text">
+                            Another excellent source of magnesium is whole grains. Take quinoa, which has 33% of the RDA in a single cup.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 cup (185 g)</div>
                     </div>
-                    <div class="slide-header">Quinoa</div>
-                    <div class="slide-body-text">
-                        Another excellent source of magnesium is whole grains. Take quinoa, which has 33% of the RDA in a single cup.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 cup (185 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-14"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-15">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-15">
-                        <img src="./src/styles/chocolate.svg" alt="chocolate">
+                <div class="slide-container" id="slide-container-15">
+                    <div class="slide-text-area">
+                        <div class="svg-immediate-container" id="food-svg-container-15">
+                            <img src="./src/styles/chocolate.svg" alt="chocolate">
+                        </div>
+                        <div class="slide-header">Dark chocolate</div>
+                        <div class="slide-body-text">
+                            Okay, time for dessert. Let's start with some dark chocolate — another food with substantial magnesium, along with beneficial fats and antioxidants.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 oz (28.35 g)</div>
                     </div>
-                    <div class="slide-header">Dark chocolate</div>
-                    <div class="slide-body-text">
-                        Okay, time for dessert. Let's start with some dark chocolate — another food with substantial magnesium, along with beneficial fats and antioxidants.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 oz (28.35 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-15"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-16">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-16">
-                        <img src="./src/styles/strawberry.svg" alt="strawberry">
+                <div class="slide-container" id="slide-container-16">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-16">
+                                <img src="./src/styles/strawberry.svg" alt="strawberry">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-16">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Strawberry</div>
+                        <div class="slide-body-text">
+                            Strawberries make a delicious pairing with chocolate. Also, did you know a cup of strawberries has more than 100% of your RDA for vitamin C?
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 cup halves (152 g)</div>
                     </div>
-                    <div class="slide-header">Strawberry</div>
-                    <div class="slide-body-text">
-                        Strawberries make a delicious pairing with chocolate. Also, did you know a cup of strawberries has more than 100% of your RDA for vitamin C?
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 cup halves (152 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-16"></div>
                 </div>
-            </div>
-            <div class="slide-container" id="slide-container-17">
-                <div class="slide-text-area">
-                    <div class="svg-immediate-container" id="food-svg-container-17">
-                        <img src="./src/styles/beans.svg" alt="beans">
+                <div class="slide-container" id="slide-container-17">
+                    <div class="slide-text-area">
+                        <div class="food-stuff-container">
+                            <div class="svg-immediate-container" id="food-svg-container-17">
+                                <img src="./src/styles/beans.svg" alt="beans">
+                            </div>
+                            <div class="click-bubble" id="click-bubble-17">
+                                <img src="./src/styles/new_speech_bubble.png" alt="">
+                                <div class="click-bubble-text">Click me!</div>
+                            </div>
+                        </div>
+                        <div class="slide-header">Navy beans</div>
+                        <div class="slide-body-text">
+                            We end our nutrition journey with the lowly bean — a food with an undistinguished reputation. Yet beans are some of the most nutritionally dense foods for humans. Just make sure to eat them with some starch
+                            or meat, as well as some fat, to get their full benefit.
+                        </div>
+                        <div class="serving-size-div">Serving size: 1 cup (182 g)</div>
                     </div>
-                    <div class="slide-header">Navy beans</div>
-                    <div class="slide-body-text">
-                        We end our nutrition journey with the lowly bean — a food with an undistinguished reputation. Yet beans are some of the most nutritionally dense foods for humans. Just make sure to eat them with some starch
-                        or meat, as well as some fat, to get their full benefit.
-                    </div>
-                    <div class="serving-size-div">Serving size: 1 cup (182 g)</div>
+                    <div class="new-svg-container-class" id="svg-container-17"></div>
                 </div>
             </div>
         </div>

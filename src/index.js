@@ -3,9 +3,6 @@ import * as Slides from './scripts/scroll/slides';
 import addAllFlyingFoodListeners from './scripts/flying_food';
 
 let nutritionData;
-// let foodCounters = {};
-
-// let bananaCounter = 0;
 
 d3.csv("nutrition_facts_for_scroller.csv", d => {
   return {
@@ -40,9 +37,9 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
 });
 
 const createVisualization = (foodData, idx, createXAxisBool) => {
-  let margin = {top: 40, right: 40, bottom: 65, left: 60}
-  let w = 700 - margin.left - margin.right;
-  let h = 600 - margin.top - margin.bottom;
+  let margin = {top: 20, right: 40, bottom: 25, left: 60}
+  let w = 600 - margin.left - margin.right;
+  let h = 475 - margin.top - margin.bottom;
 
   let data = Object.values(foodData).slice(2, -1);
   let numberOfColumns = 10;
@@ -66,10 +63,13 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
 
   let svg = d3
     .select("#vis")
+    // .select(`#svg-container-${idx}`)
     .append("svg")
-    .attr("class", `${targetSVG}`)
-    .attr("width", w + margin.left + margin.right)
-    .attr("height", h + margin.top + margin.bottom);
+    .attr("class", `${targetSVG} hidden`)
+    .attr("viewBox", `0 0 650 700`)
+    .attr("preserveAspectRatio", "xMinYMin meet");
+    // .attr("width", w + margin.left + margin.right)
+    // .attr("height", h + margin.top + margin.bottom);
 
   let xAxis = d3
     .axisBottom(xScale)
@@ -78,7 +78,7 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       return Object.keys(foodData).slice(2, -1)[d];
     });
 
-  if (createXAxisBool !== undefined) {
+  // if (createXAxisBool !== undefined) {
     svg
       .append("g")
       .attr("class", `${targetSVG}-x-axis x-axis`)
@@ -91,19 +91,29 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       .call(xAxis);
 
     svg.selectAll(".x-axis text").attr("transform", function(d) {
-      return "translate(25, 25)rotate(-45)";
+      return "translate(10, 25)rotate(-45)";
     });
 
     svg
       .append("text")
       .attr("transform", "rotate(-90)")
       .attr("class", "y-axis-label")
-      .attr("y", -5)
+      .attr("y", 0)
       .attr("x", 0 - h / 2)
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Percentage of recommended daily allowance(RDA)");
-  }
+
+    svg
+      .append("text")
+      .attr("class", "source-text")
+      .attr("transform",
+        "translate(35, " +
+        (h + margin.top + 40) + ")")
+      // .attr("dy", "1em")
+      .style("text-anchor", "left")
+      .text("Source: USDA");
+  // }
 
   let yAxis = d3.axisLeft(yScale).ticks(4, "%");
 
@@ -113,13 +123,13 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("transform", "translate(" + margin.left + ",0)")
     .style("opacity", "0%")
     .call(yAxis);
-
+        
   svg
     .selectAll("rect")
     .data(data)
     .enter()
     .append("rect")
-    .attr("class", `${targetSlideRect} hidden`)
+    .attr("class", `${targetSlideRect}`)
     .attr("x", function(d, i) {
       return i * (x_axisLength / numberOfColumns) + margin.left + 10;
     })
@@ -130,19 +140,9 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
     .attr("height", function(d) {
       return h - yScale(d / 100) - margin.top;
     })
-    .attr("fill", "red")
     .transition()
     .duration(500);
-    // .on("mouseover", handleMouseover);
 
-
-    const handleMouseover = (d, i) => {
-      d3.select(this)
-        .transition()
-        .ease("ease")
-        .duration(500)
-        .attr("fill", "white");
-    };
 };
 
 window.addEventListener("load", (e) => {
@@ -161,61 +161,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addAllFlyingFoodListeners();
 
+    const flyingFoodIds = [0, 1, 2, 3, 4, 6, 7, 9, 11, 12, 13, 14, 16, 17];
+
+    flyingFoodIds.forEach(id => {
+      document.getElementById(`food-svg-container-${id}`).addEventListener("mouseover", () => {
+        document.getElementById(`click-bubble-${id}`).classList.add("show");
+      })
+
+      document.getElementById(`food-svg-container-${id}`).addEventListener("mouseout", () => {
+        document.getElementById(`click-bubble-${id}`).classList.remove("show");
+      })
+
+    })
+
+
+    // document.getElementById('food-svg-container-0').addEventListener("mouseout", () => {
+
+    //   document.querySelector('.click-bubble').classList.remove("show");
+    // })
+
+    // document.getElementById('food-svg-container-1').addEventListener("mouseover", () => {
+
+    //   document.querySelector('#click-bubble-1').classList.add("show");
+    // })
+
+    // document.getElementById('food-svg-container-1').addEventListener("mouseout", () => {
+
+    //   document.querySelector('#click-bubble-1').classList.remove("show");
+    // })
+
 })
-
-//     document
-//       .getElementById("banana-svg-container")
-//       .addEventListener("click", e => {
-
-//         let bananaIcon = document.getElementById(
-//             "banana-svg-container"
-//         );
-
-//         let bananaChildren = bananaIcon.childNodes;
-//         if (bananaChildren[3]) {
-//             for (let i = 0; i < 20; i++) {
-//                 bananaIcon.removeChild(bananaChildren[3]);
-//             }
-//         }
-
-//         let movementFunc = newBanana => {
-
-//           let start = null;
-
-//           const step = (timestamp) => {
-//             if (!start) start = timestamp;
-//             let progress = timestamp - start;
-//             newBanana.style.transform =
-//               "translateY(" + (progress) + "px)";
-//             if (progress < 5000) {
-//               window.requestAnimationFrame(step);
-//             }
-//           }
-
-//           window.requestAnimationFrame(step);
-
-//         }
-
-//         for (let i = bananaCounter; i < bananaCounter + 20; i++) {
-//             let newBanana = document.createElement("div");
-//             newBanana.setAttribute("id", `flying-banana-${i}`);
-//             newBanana.classList.add(`flying-banana`);
-//             bananaIcon.appendChild(newBanana);
-
-//             let thisOneParticularBanana = document.getElementById(
-//             `flying-banana-${i}`
-//             );
-//             thisOneParticularBanana.style.top = (Math.random() * -700) + "px";
-//             thisOneParticularBanana.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-
-//             movementFunc(thisOneParticularBanana);
-//         }
-
-//         bananaCounter += 10;
-
-//       });
-
-// })
 
 const createObservers = (slides) => {
     

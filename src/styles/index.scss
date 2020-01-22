@@ -18,13 +18,80 @@ $strawberry-color: #DD1334;
 $beans-color: #B76120;
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 0;
+    overflow-x: hidden;
+}
+
+.byline {
+    position: fixed;
+/*     transform: translate(-73px, 85px) rotate(-90deg); */
+    transform: translate(-20px, 24px) rotate(-90deg);
+    transition: 1s all;
+    height: 125px;
+    z-index: 1000;
+/*     animation: 3s ease-in-out spinback; */
+}
+
+.byline:hover {
+/*     animation: 2s ease-in-out spin; */
+    transform: translate(0px, 0px) rotate(0deg);
+    transform: rotateY(360deg);
+/*     transform: translate(-20px, 24px) rotate(-90deg); */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+        transform: translate(-20px, 24px) rotate(-90deg);
+    }
+    
+    50% {
+        transform: translate(-20px, 24px) rotate(-90deg);
+        transform: rotateY(180deg);
+    }
+    
+    100% {
+        transform: translate(-20px, 24px) rotate(-90deg);
+        transform: rotateY(360deg);
+    }
+}
+
+#new-byline {
+    font-size: 19px;
+    opacity: 50%;
+    padding-bottom: 8px;
+}
+
+#new-byline a {
+    text-decoration: none;
+    color: black;
+}
+
+#new-byline:hover, #new-byline a:hover {
+    color: blue;
 }
 
 .background-container {
+    width: 90%;
+    height: auto;
+    padding: 0 50px;
+    scroll-behavior: smooth;
     display: flex;
+    margin: auto;
+/*     min-width: 700px; */
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#header-and-nav-container {
+    display: flex;
+    align-items: flex-start;
 }
 
 #main-header-container {
@@ -39,6 +106,10 @@ body {
 #main-header-container {
     display: flex;
     align-items: center;
+}
+
+#main-header {
+    margin-bottom: 3px;
 }
 
 #main-header-container ul {
@@ -82,6 +153,70 @@ body {
     padding: 20px;
     border-radius: 40%;
 } */
+
+.food-stuff-container {
+    display: flex;
+}
+
+.click-bubble {
+    opacity: 0%;
+    margin-top: 60px;
+}
+
+#click-bubble-2 {
+    margin-left: -15px;
+}
+
+#click-bubble-3 {
+    margin-left: -19px;
+}
+
+#click-bubble-4 {
+    margin-left: -49px;
+}
+
+#click-bubble-11 {
+    margin-left: -18px;
+}
+
+#click-bubble-12 {
+    margin-top: 90px;
+    margin-left: -50px;
+}
+
+#click-bubble-13 {
+    margin-left: -25px;
+}
+
+#click-bubble-14 {
+    margin-left: -18px;
+}
+
+#click-bubble-16 {
+    margin-left: -32px;
+}
+
+.show {
+    opacity: 100%;
+}
+
+.click-bubble img {
+    height: 75px;
+    width: auto;
+    z-index: 1000;
+    position: absolute;
+    transform: rotate(21deg);    
+}
+
+.click-bubble-text {
+    margin-top: 29px;
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    width: 60px;
+    margin-left: 26px;
+    font-size: 14px;
+}
 
 .flying-food {
     width: 150px;
@@ -210,24 +345,44 @@ body {
 }
 
 #viewable-area {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    width: 1000px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     background-color: white;
     margin-left: auto;
-    scroll-behavior: smooth;
+    display: inline-block;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
-.slide-svg-container {
+#new-viewable-area {
+    width: 100%;
+/*     padding-left: 75px; */
+}
+
+.slide-svg-container svg {
     width: 100%;
     height: 100%;
 }
 
-.slide-svg-container svg {
-    position: absolute;
-    margin-left: 25px;
-    top: 70px;
+#vis {
+    display: inline-block;
+    position: fixed;
+    height: 100%;
+/*     width: 80%; */
+    align-self: flex-start;
+    margin-left: 20vw;
+}
+
+.new-svg-container-class {
+    height: 100%;
+    width: 75%;
+}
+
+.new-svg-container-class svg {
+    width: 100%;
+    height: 117vh;
+/*     height: 100%;
+       width: 49vw; */
 }
 
 .y-axis path {
@@ -239,14 +394,17 @@ body {
     height: auto;
     width: 100%;
     margin-bottom: 125px;
+    max-height: 600px;
 }
 
 .slide-text-area {
-    width: 292.5px;
-    height: auto;
+    width: 25%;
+    height: 600px;
     font-size: 30px;
     box-sizing: border-box;
     transition: all 0.5s;
+    margin-right: 25px;
+    overflow: scroll;
 }
 
 .banana-text-area {
@@ -356,14 +514,16 @@ body {
     fill: #B76120;
 }
 
-/* .chart-rect:hover {
-    animation-name: animateColor;
-    animation-duration: 0.5s;
-} */
+.chart-rect:hover {
+    opacity: 75%;
+    transition: all 0.5s;
+/*     animation-name: animateColor;
+    animation-duration: 0.5s; */
+}
 
 @keyframes animateColor {
-    from {fill: attr(fill) }
-    to {fill: white}
+    from { opacity: 100%}
+    to { opacity: 75% }
 }
 
 .hidden {
@@ -376,6 +536,7 @@ body {
 }
 
 .chart-rect {
+    transition: all 0.5s;
     animation-duration: 0.5s;
     animation-name: animateHeight;
 }
@@ -389,11 +550,15 @@ body {
 
 .nav-column {
     position: sticky;
-    top: 0px;
-    align-self: center;
+/*     position: absolute; */
+/*     display: inline-block; */
+    top: 25px;
+/*     align-self: center; */
     margin-left: 20px;
     padding-left: 0;
     margin-right: auto;
+    width: auto;
+    align-self: flex-start;
 }
 
 .nav-li {
@@ -780,10 +945,37 @@ body {
 .anchor {
     display: block;
     position: relative;
-    top: -100px;
+    top: -115px;
     visibility: hidden;
 }
 
 .y-axis-label {
     font-size: 13px;
 }
+
+.source-text {
+    font-size: 13px;
+}
+
+.d3-tip {
+    line-height: 1;
+    padding: 6px;
+/*     background: rgba(0, 0, 0, 0.8); */
+/*     color: #fff; */
+    border-radius: 4px;
+    font-size: 12px;
+    border: 2px solid black;
+}
+
+ .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      content: "\25BC";
+      position: absolute;
+      text-align: center;
+    }
+
