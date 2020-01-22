@@ -42,7 +42,7 @@
                 let thisOneParticularFood = document.getElementById(
                     `flying-food-of-type-${idx}-${i}`
                 );
-                thisOneParticularFood.style.top = Math.random() * window.scrollY + "px";
+                thisOneParticularFood.style.top = (Math.random() * -300) + window.scrollY + "px";
                 thisOneParticularFood.style.left =
                     Math.floor(Math.random() * window.innerWidth) + "px";
 
