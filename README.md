@@ -22,12 +22,12 @@ Users of the nutrition facts scroller are able to:
 
 - [x] Scroll through the visualizations (17 slides)
 - [x] Hover over each of the charts to see more detailed information
-- [x] Toggle between visualizations of the various featured foods using the navbar
-- [x] Click on most of the food images to see a playful animation
+- [x] Toggle between visualizations of the various featured foods using the navigation bar
+- [x] Click on most of the food images to display a playful animation
 
 Additionally, this project includes:
 
-- [ ] A sidebar of scrollable text providing context and highlights about the food featured in each visualization
+- [x] A sidebar of scrollable text providing context and highlights about the food featured in each visualization
 
 ## <a name="wireframes"></a> Wireframes
 
