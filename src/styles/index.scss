@@ -18,6 +18,18 @@ $strawberry-color: #DD1334;
 $beans-color: #B76120;
 
 
+@media only screen and (max-width: 768px) {
+    .nav-column {
+        display: none;
+    }
+    #vis svg {
+        width: 100%;
+    }
+    // .new-svg-container-class svg {
+    //     width: 100%;
+    // }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -342,6 +354,8 @@ body {
 /*     width: 80%; */
     align-self: flex-start;
     margin-left: 20vw;
+/*     box-sizing: border-box;
+    padding-right: 25px; */
 }
 
 .new-svg-container-class {
