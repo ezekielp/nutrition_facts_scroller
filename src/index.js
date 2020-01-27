@@ -77,7 +77,6 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       return Object.keys(foodData).slice(2, -1)[d];
     });
 
-  // if (createXAxisBool !== undefined) {
     svg
       .append("g")
       .attr("class", `${targetSVG}-x-axis x-axis`)
@@ -109,10 +108,8 @@ const createVisualization = (foodData, idx, createXAxisBool) => {
       .attr("transform",
         "translate(35, " +
         (h + margin.top + 40) + ")")
-      // .attr("dy", "1em")
       .style("text-anchor", "left")
       .text("Source: USDA");
-  // }
 
   let yAxis = d3.axisLeft(yScale).ticks(4, "%");
 
@@ -172,22 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
 
     })
-
-
-    // document.getElementById('food-svg-container-0').addEventListener("mouseout", () => {
-
-    //   document.querySelector('.click-bubble').classList.remove("show");
-    // })
-
-    // document.getElementById('food-svg-container-1').addEventListener("mouseover", () => {
-
-    //   document.querySelector('#click-bubble-1').classList.add("show");
-    // })
-
-    // document.getElementById('food-svg-container-1').addEventListener("mouseout", () => {
-
-    //   document.querySelector('#click-bubble-1').classList.remove("show");
-    // })
 
 })
 
