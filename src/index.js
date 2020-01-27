@@ -22,7 +22,6 @@ d3.csv("nutrition_facts_for_scroller.csv", d => {
   };
 }).then(data => {
     nutritionData = data;
-    console.log(nutritionData);
     
     createVisualization(nutritionData[0], 0, true);
     createNavLi(0);
@@ -200,8 +199,6 @@ const createObservers = (slides) => {
       threshold: .5
     };
 
-    console.log(slides);
-    
     for (let i = 0; i < slides.length - 1; i++) {
       Slides.renderSlide(options, slides[i], i);
     }
