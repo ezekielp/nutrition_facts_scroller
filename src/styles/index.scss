@@ -163,7 +163,17 @@ body {
 
 .click-bubble {
     opacity: 0%;
-    margin-top: 60px;
+    margin-top: 35px;
+    margin-left: -25px;
+}
+
+#click-bubble-0 {
+    margin-left: -10px;
+    margin-top: 50px;
+}
+
+#click-bubble-1 {
+    margin-left: -5px;
 }
 
 #click-bubble-2 {
@@ -178,12 +188,20 @@ body {
     margin-left: -49px;
 }
 
+#click-bubble-6, #click-bubble-7 {
+    margin-left: 0px;
+}
+
+#click-bubble-9 {
+    margin-left: -6px;
+}
+
 #click-bubble-11 {
     margin-left: -18px;
 }
 
 #click-bubble-12 {
-    margin-top: 90px;
+    margin-top: 44px;
     margin-left: -50px;
 }
 
@@ -198,6 +216,12 @@ body {
 #click-bubble-16 {
     margin-left: -32px;
 }
+
+#click-bubble-17 {
+    margin-top: 7px;
+    margin-left: -9px;
+}
+
 
 .show {
     opacity: 100%;
@@ -379,17 +403,16 @@ body {
     height: auto;
     width: 100%;
     margin-bottom: 125px;
-    max-height: 600px;
+    min-height: 600px;
 }
 
 .slide-text-area {
     width: 25%;
-    height: 600px;
+    height: 100%;
     font-size: 30px;
     box-sizing: border-box;
     transition: all 0.5s;
     margin-right: 25px;
-    overflow: scroll;
 }
 
 .banana-text-area {
