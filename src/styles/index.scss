@@ -18,6 +18,18 @@ $strawberry-color: #DD1334;
 $beans-color: #B76120;
 
 
+@media only screen and (max-width: 768px) {
+    .nav-column {
+        display: none;
+    }
+    #vis svg {
+        width: 100%;
+    }
+    // .new-svg-container-class svg {
+    //     width: 100%;
+    // }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -217,6 +229,10 @@ body {
     background-repeat: no-repeat;
 }
 
+#food-svg-container-0 {
+    margin-bottom: 0;
+}
+
 .flying-food-0 {
     background-image: url('./bananas.svg');
 }
@@ -290,8 +306,10 @@ body {
 }
 
 .svg-immediate-container img {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
 }
 
  .svg-immediate-container:hover:after {
@@ -305,6 +323,8 @@ body {
 .svg-immediate-container {
     text-align: center;
     cursor: pointer;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 #viewable-area {
@@ -334,6 +354,8 @@ body {
 /*     width: 80%; */
     align-self: flex-start;
     margin-left: 20vw;
+/*     box-sizing: border-box;
+    padding-right: 25px; */
 }
 
 .new-svg-container-class {
@@ -342,7 +364,7 @@ body {
 }
 
 .new-svg-container-class svg {
-    width: 100%;
+    width: 80%;
     height: 117vh;
 /*     height: 100%;
        width: 49vw; */
