@@ -336,9 +336,21 @@ body {
     max-height: 200px;
 }
 
- .svg-immediate-container:hover:after {
-    visibility: visible;
+.flying-food-click-enabled {
+    cursor: pointer;
 }
+
+.flying-food-click-disabled {
+    cursor: not-allowed;
+}
+
+// .flying-food-click-enabled:hover:after {
+//     visibility: visible;
+// }
+
+/* .svg-immediate-container:hover:after {
+    visibility: visible;
+} */
 
 #cod-liver-img {
     height: auto;
@@ -346,7 +358,7 @@ body {
 
 .svg-immediate-container {
     text-align: center;
-    cursor: pointer;
+/*     cursor: pointer; */
     width: 100%;
     margin-bottom: 30px;
 }

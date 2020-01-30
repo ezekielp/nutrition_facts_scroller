@@ -9,8 +9,13 @@
             
             const flyingFoodClickCallback = e => {
                 if (justClicked) {
-                    return;
+                    // foodIcon.classList.remove("flying-food-click-enabled");
+                    // foodIcon.classList.add("flying-food-click-disabled");
                 } else {
+                    foodIcon.classList.remove("flying-food-click-enabled");
+                    foodIcon.classList.add("flying-food-click-disabled");
+                    document.getElementById(`click-bubble-${idx}`).classList.remove("show");
+
                 let foodChildren = foodIcon.childNodes;
 
                 window.setTimeout(() => {
@@ -19,7 +24,7 @@
                             foodIcon.removeChild(foodChildren[3]);
                         }
                     }
-                }, 3000);
+                }, 2000);
 
                 let movementFunc = newFood => {
                     let start = null;
@@ -62,7 +67,10 @@
                 justClicked = true;
                 window.setTimeout(() => {
                     justClicked = false;
-                }, 3000);
+                    foodIcon.classList.remove("flying-food-click-disabled");
+                    foodIcon.classList.add("flying-food-click-enabled");
+                    document.getElementById(`click-bubble-${idx}`).classList.add("show");
+                }, 2000);
                 }
             }
 
