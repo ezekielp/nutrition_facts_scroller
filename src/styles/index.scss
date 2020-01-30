@@ -92,7 +92,7 @@ body {
     scroll-behavior: smooth;
     display: flex;
     margin: auto;
-    max-width: 1200px;
+/*     max-width: 1200px; */
     box-sizing: border-box;
 }
 
@@ -343,14 +343,6 @@ body {
 .flying-food-click-disabled {
     cursor: not-allowed;
 }
-
-// .flying-food-click-enabled:hover:after {
-//     visibility: visible;
-// }
-
-/* .svg-immediate-container:hover:after {
-    visibility: visible;
-} */
 
 #cod-liver-img {
     height: auto;

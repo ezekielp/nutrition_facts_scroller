@@ -9,8 +9,6 @@
             
             const flyingFoodClickCallback = e => {
                 if (justClicked) {
-                    // foodIcon.classList.remove("flying-food-click-enabled");
-                    // foodIcon.classList.add("flying-food-click-disabled");
                 } else {
                     foodIcon.classList.remove("flying-food-click-enabled");
                     foodIcon.classList.add("flying-food-click-disabled");
@@ -69,7 +67,6 @@
                     justClicked = false;
                     foodIcon.classList.remove("flying-food-click-disabled");
                     foodIcon.classList.add("flying-food-click-enabled");
-                    document.getElementById(`click-bubble-${idx}`).classList.add("show");
                 }, 2000);
                 }
             }
