@@ -88,7 +88,7 @@ body {
 .background-container {
     width: 90%;
     height: auto;
-    padding: 0 50px;
+    padding: 0 0 0 50px;
     scroll-behavior: smooth;
     display: flex;
     margin: auto;
@@ -366,7 +366,7 @@ body {
 }
 
 #new-viewable-area {
-    width: 100%;
+    width: 90%;
 /*     padding-left: 75px; */
 }
 
