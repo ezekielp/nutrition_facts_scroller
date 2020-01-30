@@ -88,11 +88,11 @@ body {
 .background-container {
     width: 90%;
     height: auto;
-    padding: 0 50px;
+    padding: 0 0 0 50px;
     scroll-behavior: smooth;
     display: flex;
     margin: auto;
-    max-width: 1200px;
+/*     max-width: 1200px; */
     box-sizing: border-box;
 }
 
@@ -336,8 +336,12 @@ body {
     max-height: 200px;
 }
 
- .svg-immediate-container:hover:after {
-    visibility: visible;
+.flying-food-click-enabled {
+    cursor: pointer;
+}
+
+.flying-food-click-disabled {
+    cursor: not-allowed;
 }
 
 #cod-liver-img {
@@ -346,7 +350,7 @@ body {
 
 .svg-immediate-container {
     text-align: center;
-    cursor: pointer;
+/*     cursor: pointer; */
     width: 100%;
     margin-bottom: 30px;
 }
@@ -362,7 +366,7 @@ body {
 }
 
 #new-viewable-area {
-    width: 100%;
+    width: 90%;
 /*     padding-left: 75px; */
 }
 
