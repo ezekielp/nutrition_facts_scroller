@@ -273,8 +273,12 @@ body {
     background-image: url('./avocado.svg');
 }
 
-.flying-food-4 {
-    background-image: url('./liver.svg');
+/* .flying-food-4 {
+    cursor: default;
+} */
+
+#food-svg-container-4 {
+    cursor: default;
 }
 
 #food-svg-container-5 {
